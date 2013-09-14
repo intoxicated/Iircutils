@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
+		4749C72A17E5195400EE09A1 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72917E5195400EE09A1 /* IRCData.m */; };
+		4749C73017E51D2300EE09A1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72F17E51D2300EE09A1 /* Channel.m */; };
+		4749C73417E51DAE00EE09A1 /* ProtocolUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73317E51DAE00EE09A1 /* ProtocolUnitTest.m */; };
+		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
 		474BA96617E4243F003C42CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BA96517E4243F003C42CF /* Foundation.framework */; };
 		474BA96B17E4243F003C42CF /* Iircutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 474BA96A17E4243F003C42CF /* Iircutils.h */; };
 		474BA96D17E4243F003C42CF /* Iircutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA96C17E4243F003C42CF /* Iircutils.m */; };
@@ -34,6 +39,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4749C72617E5176700EE09A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4749C72817E5195400EE09A1 /* IRCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRCData.h; path = Core/IRCData.h; sourceTree = "<group>"; };
+		4749C72917E5195400EE09A1 /* IRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRCData.m; path = Core/IRCData.m; sourceTree = "<group>"; };
+		4749C72E17E51D2300EE09A1 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
+		4749C72F17E51D2300EE09A1 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
+		4749C73217E51DAE00EE09A1 /* ProtocolUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolUnitTest.h; path = Unittest/ProtocolUnitTest.h; sourceTree = "<group>"; };
+		4749C73317E51DAE00EE09A1 /* ProtocolUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProtocolUnitTest.m; path = Unittest/ProtocolUnitTest.m; sourceTree = "<group>"; };
+		4749C73517E51DC600EE09A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		474BA96217E4243F003C42CF /* libIircutils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIircutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		474BA96517E4243F003C42CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		474BA96917E4243F003C42CF /* Iircutils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iircutils-Prefix.pch"; sourceTree = "<group>"; };
@@ -62,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */,
+				4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */,
 				474BA96617E4243F003C42CF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4749C72D17E51D1100EE09A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4749C72817E5195400EE09A1 /* IRCData.h */,
+				4749C72917E5195400EE09A1 /* IRCData.m */,
+				4749C72E17E51D2300EE09A1 /* Channel.h */,
+				4749C72F17E51D2300EE09A1 /* Channel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4749C73117E51D9500EE09A1 /* Unittest */ = {
+			isa = PBXGroup;
+			children = (
+				4749C73217E51DAE00EE09A1 /* ProtocolUnitTest.h */,
+				4749C73317E51DAE00EE09A1 /* ProtocolUnitTest.m */,
+			);
+			name = Unittest;
+			sourceTree = "<group>";
+		};
 		474BA95917E4243F003C42CF = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +124,8 @@
 		474BA96417E4243F003C42CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4749C73517E51DC600EE09A1 /* SenTestingKit.framework */,
+				4749C72617E5176700EE09A1 /* CFNetwork.framework */,
 				474BA96517E4243F003C42CF /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -97,6 +134,8 @@
 		474BA96717E4243F003C42CF /* Iircutils */ = {
 			isa = PBXGroup;
 			children = (
+				4749C73117E51D9500EE09A1 /* Unittest */,
+				4749C72D17E51D1100EE09A1 /* Models */,
 				474BA99E17E4271E003C42CF /* Interface */,
 				474BA98B17E42717003C42CF /* Core */,
 				474BA96A17E4243F003C42CF /* Iircutils.h */,
@@ -204,6 +243,9 @@
 				474BA99D17E42717003C42CF /* Response.m in Sources */,
 				474BA9A317E4271E003C42CF /* ITX_Bot.m in Sources */,
 				474BA9A417E4271E003C42CF /* ITX_Client.m in Sources */,
+				4749C72A17E5195400EE09A1 /* IRCData.m in Sources */,
+				4749C73017E51D2300EE09A1 /* Channel.m in Sources */,
+				4749C73417E51DAE00EE09A1 /* ProtocolUnitTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +309,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Iircutils.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iircutils/Iircutils-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -279,6 +325,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Iircutils.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iircutils/Iircutils-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -306,6 +356,7 @@
 				474BA97217E4243F003C42CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol IRCConnectionDelegate <NSObject>
+
+@end
+
 @interface Connection : NSObject
 
 @end
