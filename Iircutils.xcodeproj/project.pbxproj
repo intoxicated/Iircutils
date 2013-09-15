@@ -12,6 +12,11 @@
 		4749C73417E51DAE00EE09A1 /* ProtocolUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73317E51DAE00EE09A1 /* ProtocolUnitTest.m */; };
 		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
 		4749C73917E51F4900EE09A1 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
+		4749C73D17E5409500EE09A1 /* EvenListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73C17E5409500EE09A1 /* EvenListener.m */; };
+		4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73F17E540CE00EE09A1 /* MessageListener.m */; };
+		4749C74317E5412100EE09A1 /* NoticeListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74217E5412100EE09A1 /* NoticeListener.m */; };
+		4749C74617E5414400EE09A1 /* CTCPListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74517E5414400EE09A1 /* CTCPListener.m */; };
+		4749C74917E5416B00EE09A1 /* ReplyListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74817E5416B00EE09A1 /* ReplyListener.m */; };
 		474BA96617E4243F003C42CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BA96517E4243F003C42CF /* Foundation.framework */; };
 		474BA96B17E4243F003C42CF /* Iircutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 474BA96A17E4243F003C42CF /* Iircutils.h */; };
 		474BA96D17E4243F003C42CF /* Iircutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA96C17E4243F003C42CF /* Iircutils.m */; };
@@ -47,6 +52,16 @@
 		4749C73517E51DC600EE09A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4749C73717E51F4900EE09A1 /* IRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRCData.m; path = Models/IRCData.m; sourceTree = "<group>"; };
 		4749C73817E51F4900EE09A1 /* IRCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRCData.h; path = Models/IRCData.h; sourceTree = "<group>"; };
+		4749C73B17E5409500EE09A1 /* EvenListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EvenListener.h; path = Handlers/EventListener/EvenListener.h; sourceTree = "<group>"; };
+		4749C73C17E5409500EE09A1 /* EvenListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EvenListener.m; path = Handlers/EventListener/EvenListener.m; sourceTree = "<group>"; };
+		4749C73E17E540CE00EE09A1 /* MessageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageListener.h; path = Handlers/MessageListener/MessageListener.h; sourceTree = "<group>"; };
+		4749C73F17E540CE00EE09A1 /* MessageListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageListener.m; path = Handlers/MessageListener/MessageListener.m; sourceTree = "<group>"; };
+		4749C74117E5412100EE09A1 /* NoticeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeListener.h; path = Handlers/NoticeListener/NoticeListener.h; sourceTree = "<group>"; };
+		4749C74217E5412100EE09A1 /* NoticeListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticeListener.m; path = Handlers/NoticeListener/NoticeListener.m; sourceTree = "<group>"; };
+		4749C74417E5414400EE09A1 /* CTCPListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTCPListener.h; path = Handlers/CTCPListener/CTCPListener.h; sourceTree = "<group>"; };
+		4749C74517E5414400EE09A1 /* CTCPListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTCPListener.m; path = Handlers/CTCPListener/CTCPListener.m; sourceTree = "<group>"; };
+		4749C74717E5416B00EE09A1 /* ReplyListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReplyListener.h; path = Handlers/ReplyListener/ReplyListener.h; sourceTree = "<group>"; };
+		4749C74817E5416B00EE09A1 /* ReplyListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReplyListener.m; path = Handlers/ReplyListener/ReplyListener.m; sourceTree = "<group>"; };
 		474BA96217E4243F003C42CF /* libIircutils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIircutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		474BA96517E4243F003C42CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		474BA96917E4243F003C42CF /* Iircutils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iircutils-Prefix.pch"; sourceTree = "<group>"; };
@@ -106,6 +121,23 @@
 			name = Unittest;
 			sourceTree = "<group>";
 		};
+		4749C73A17E5407300EE09A1 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				4749C73B17E5409500EE09A1 /* EvenListener.h */,
+				4749C73C17E5409500EE09A1 /* EvenListener.m */,
+				4749C73E17E540CE00EE09A1 /* MessageListener.h */,
+				4749C73F17E540CE00EE09A1 /* MessageListener.m */,
+				4749C74117E5412100EE09A1 /* NoticeListener.h */,
+				4749C74217E5412100EE09A1 /* NoticeListener.m */,
+				4749C74417E5414400EE09A1 /* CTCPListener.h */,
+				4749C74517E5414400EE09A1 /* CTCPListener.m */,
+				4749C74717E5416B00EE09A1 /* ReplyListener.h */,
+				4749C74817E5416B00EE09A1 /* ReplyListener.m */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
 		474BA95917E4243F003C42CF = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +168,7 @@
 		474BA96717E4243F003C42CF /* Iircutils */ = {
 			isa = PBXGroup;
 			children = (
+				4749C73A17E5407300EE09A1 /* Handlers */,
 				4749C73117E51D9500EE09A1 /* Unittest */,
 				4749C72D17E51D1100EE09A1 /* Models */,
 				474BA99E17E4271E003C42CF /* Interface */,
@@ -246,6 +279,11 @@
 				4749C73017E51D2300EE09A1 /* Channel.m in Sources */,
 				4749C73417E51DAE00EE09A1 /* ProtocolUnitTest.m in Sources */,
 				4749C73917E51F4900EE09A1 /* IRCData.m in Sources */,
+				4749C73D17E5409500EE09A1 /* EvenListener.m in Sources */,
+				4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */,
+				4749C74317E5412100EE09A1 /* NoticeListener.m in Sources */,
+				4749C74617E5414400EE09A1 /* CTCPListener.m in Sources */,
+				4749C74917E5416B00EE09A1 /* ReplyListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
