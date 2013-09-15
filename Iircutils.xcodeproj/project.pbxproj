@@ -87,6 +87,8 @@
 		4749C72D17E51D1100EE09A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				474BA96A17E4243F003C42CF /* Iircutils.h */,
+				474BA96C17E4243F003C42CF /* Iircutils.m */,
 				4749C73817E51F4900EE09A1 /* IRCData.h */,
 				4749C73717E51F4900EE09A1 /* IRCData.m */,
 				4749C72E17E51D2300EE09A1 /* Channel.h */,
@@ -138,8 +140,6 @@
 				4749C72D17E51D1100EE09A1 /* Models */,
 				474BA99E17E4271E003C42CF /* Interface */,
 				474BA98B17E42717003C42CF /* Core */,
-				474BA96A17E4243F003C42CF /* Iircutils.h */,
-				474BA96C17E4243F003C42CF /* Iircutils.m */,
 				474BA96817E4243F003C42CF /* Supporting Files */,
 			);
 			path = Iircutils;

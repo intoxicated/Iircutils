@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @class IRCData;
+
 @interface Protocol : NSObject
 
 /**

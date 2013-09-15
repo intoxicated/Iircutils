@@ -16,8 +16,9 @@
 {
     if (!(self = [super init]))
     {
-        
+        self.user_list = [[NSMutableArray alloc] init];
     }
     return self;
 }
+
 @end

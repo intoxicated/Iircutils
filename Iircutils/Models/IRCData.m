@@ -17,7 +17,7 @@
 {
     if (!(self = [super init]))
     {
-        self.params = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
