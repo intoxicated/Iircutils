@@ -1,13 +1,13 @@
 //
-//  ProtocolUnitTest.h
+//  ProtocolUnittest.h
 //  Iircutils
 //
-//  Created by Realfree on 9/14/13.
+//  Created by Realfree on 9/17/13.
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface ProtocolUnitTest : SenTestCase
+@interface ProtocolUnittest : SenTestCase
 
 @end

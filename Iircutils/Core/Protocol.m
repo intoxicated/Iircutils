@@ -13,17 +13,20 @@
 
 /**
  * Remove the name symbols from the nick name
- * @args: string nickname
- * return: stripped nickname, if none-symbole nil
- *
  * ex) [Protocol strip_name_symbol:@"@opped_usr"];
  *      --> opped_usr
  *
  *     [Protocol strip_name_symbol:@"eopped_usr"];
  *      --> nil
+ * @param string nickname
+ * @return stripped nickname, if none-symbole nil
  */
 +(NSString *)strip_name_symbol:(NSString *)nickname
 {
+    if(nickname == nil || [nickname isEqualToString:@""])
+        [NSException raise:@"critical invalid value for nick"
+                    format:@"%input is invalid"];
+    
     NSMutableDictionary * name_symbols =
         [[NSMutableDictionary alloc] init];
     [name_symbols setObject:@"voice" forKey:@"+"];
@@ -32,15 +35,17 @@
     [name_symbols setObject:@"protectedop" forKey:@"&"];
     [name_symbols setObject:@"owner" forKey:@"~"];
     
-    NSString * sym = [nickname substringToIndex:1];
+    NSString * sym = [nickname substringWithRange:NSMakeRange(0, 1)];
     
     if([name_symbols objectForKey:sym] != nil)
-        return [nickname substringWithRange:NSMakeRange(1, [nickname length])];
+        return [nickname substringWithRange:NSMakeRange(1, [nickname length]-1)];
     return nil;
 }
 
 /**
- * 
+ * Parse out mode into array
+ * @param mode_data irc mode data
+ * @return array of two element, add and remove
  */
 +(NSArray *)parse_mode:(NSString *)mode_data
 {
@@ -77,6 +82,8 @@
  * Take an irc line and breaks into three parts: prefix, command, params
  * This function strictly depends on the form of line, which should be
  *      -- :prefix command param param2 param3 .. 
+ * @param data one irc data line
+ * @return IRCData* that contains information about data 
  */
 +(IRCData *)parse_line:(NSString *)data
 {
@@ -96,7 +103,9 @@
 }
 
 /**
- *
+ * Take IRCData class and parse out prefix 
+ * @param data IRCData class contains information
+ * @return NSArray contains nick, user and host 
  */
 +(NSArray *)parse_prefix:(IRCData *)data
 {
@@ -126,7 +135,9 @@
 }
 
 /**
- *
+ * Check if channel name is valid, not testing if it exists
+ * @param channel string name of channel
+ * @return YES if it is valid, otherwise NO
  */
 +(BOOL)is_valid_channel:(NSString *)channel
 {
@@ -144,7 +155,9 @@
 }
 
 /**
- *
+ * Check if nick name is valid
+ * @param nick nick name
+ * @return YES if it is valid, otherwise NO
  */
 +(BOOL)is_valid_nick:(NSString *)nick
 {
@@ -166,7 +179,9 @@
 }
 
 /**
- *
+ * Filter nick, removing all invalid characters
+ * @param nick string
+ * @return string that is removed invalid characters if any exists
  */
 +(NSString *)filtered_nick:(NSString *)nick
 {
