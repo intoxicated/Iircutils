@@ -6,8 +6,28 @@
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import "EvenListener.h"
+#import "EventListener.h"
 
-@interface MessageListener : EvenListener
+@interface MessageListener : EventListener
+
+@end
+
+@interface PrivateMessageListener : MessageListener
+
+@end
+
+@interface ChannelMessageListener : MessageListener
+
+@end
+
+@interface NoticeListener : MessageListener
+
+@end
+
+@interface PrivateNoticeListener : NoticeListener
+
+@end
+
+@interface ChannelNoticeListener : NoticeListener
 
 @end

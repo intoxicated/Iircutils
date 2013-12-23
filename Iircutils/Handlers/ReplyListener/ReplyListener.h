@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import "EvenListener.h"
+#import "EventListener.h"
 
-@interface ReplyListener : EvenListener
+@interface ReplyListener : EventListener
 
 @end

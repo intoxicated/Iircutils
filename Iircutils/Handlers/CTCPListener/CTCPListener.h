@@ -6,8 +6,40 @@
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import "EvenListener.h"
+#import "EventListener.h"
 
-@interface CTCPListener : EvenListener
+@interface CTCPListener : EventListener
+
+@end
+
+@interface CTCPActionListener : CTCPListener
+
+@end
+
+@interface CTCPUserInfoListener : CTCPListener
+
+@end
+
+@interface CTCPClientListener : CTCPListener
+
+@end
+
+@interface CTCPVersionListener : CTCPListener
+
+@end
+
+@interface CTCPPingListener : CTCPListener
+
+@end
+
+@interface CTCPErrorListener : CTCPListener
+
+@end
+
+@interface CTCPTimeListener : CTCPListener
+
+@end
+
+@interface DCCListener : CTCPListener
 
 @end

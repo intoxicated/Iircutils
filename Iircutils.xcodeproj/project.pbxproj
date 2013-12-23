@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223B32041868B56900A30749 /* EventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32031868B56900A30749 /* EventDispatcher.m */; };
+		223B32071868D3FB00A30749 /* EventElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32061868D3FB00A30749 /* EventElement.m */; };
+		223B320C1868E0C500A30749 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B320B1868E0C500A30749 /* EventObject.m */; };
+		223B32121868FB9E00A30749 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B320F1868FB9E00A30749 /* GCDAsyncSocket.m */; };
+		223B32131868FB9E00A30749 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32111868FB9E00A30749 /* GCDAsyncUdpSocket.m */; };
+		223B32181868FBA500A30749 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32151868FBA500A30749 /* AsyncSocket.m */; };
+		223B32191868FBA500A30749 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32171868FBA500A30749 /* AsyncUdpSocket.m */; };
+		223B321D1869019100A30749 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223B321C1869019100A30749 /* XCTest.framework */; };
+		223B3225186902DC00A30749 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223B321C1869019100A30749 /* XCTest.framework */; };
+		223B3226186902DC00A30749 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BA96517E4243F003C42CF /* Foundation.framework */; };
+		223B3227186902DC00A30749 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9012417E8046000EBE6A3 /* UIKit.framework */; };
+		223B322D186902DC00A30749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223B322B186902DC00A30749 /* InfoPlist.strings */; };
+		223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B322E186902DC00A30749 /* Iircutils_Tests.m */; };
+		223B32371869032C00A30749 /* ConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32361869032C00A30749 /* ConnectionTest.m */; };
 		4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
 		4749C73017E51D2300EE09A1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72F17E51D2300EE09A1 /* Channel.m */; };
 		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
 		4749C73917E51F4900EE09A1 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
-		4749C73D17E5409500EE09A1 /* EvenListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73C17E5409500EE09A1 /* EvenListener.m */; };
+		4749C73D17E5409500EE09A1 /* EventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73C17E5409500EE09A1 /* EventListener.m */; };
 		4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73F17E540CE00EE09A1 /* MessageListener.m */; };
-		4749C74317E5412100EE09A1 /* NoticeListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74217E5412100EE09A1 /* NoticeListener.m */; };
 		4749C74617E5414400EE09A1 /* CTCPListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74517E5414400EE09A1 /* CTCPListener.m */; };
 		4749C74917E5416B00EE09A1 /* ReplyListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74817E5416B00EE09A1 /* ReplyListener.m */; };
 		474BA96617E4243F003C42CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BA96517E4243F003C42CF /* Foundation.framework */; };
@@ -27,30 +40,17 @@
 		474BA99D17E42717003C42CF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99717E42717003C42CF /* Response.m */; };
 		474BA9A317E4271E003C42CF /* ITX_Bot.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A017E4271E003C42CF /* ITX_Bot.m */; };
 		474BA9A417E4271E003C42CF /* ITX_Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A217E4271E003C42CF /* ITX_Client.m */; };
-		47A9014E17E80B4400EBE6A3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
-		47A9014F17E80B4400EBE6A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9012417E8046000EBE6A3 /* UIKit.framework */; };
-		47A9015017E80B4400EBE6A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BA96517E4243F003C42CF /* Foundation.framework */; };
-		47A9015617E80B4400EBE6A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47A9015417E80B4400EBE6A3 /* InfoPlist.strings */; };
-		47A9015917E80B4400EBE6A3 /* UnittestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9015817E80B4400EBE6A3 /* UnittestSuite.m */; };
-		47A9016017E80B6500EBE6A3 /* ProtocolUnittest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9015F17E80B6500EBE6A3 /* ProtocolUnittest.m */; };
-		47A9016117E80C6600EBE6A3 /* EvenListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73C17E5409500EE09A1 /* EvenListener.m */; };
-		47A9016217E80C6600EBE6A3 /* MessageListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73F17E540CE00EE09A1 /* MessageListener.m */; };
-		47A9016317E80C6600EBE6A3 /* NoticeListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74217E5412100EE09A1 /* NoticeListener.m */; };
-		47A9016417E80C6600EBE6A3 /* CTCPListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74517E5414400EE09A1 /* CTCPListener.m */; };
-		47A9016517E80C6600EBE6A3 /* ReplyListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C74817E5416B00EE09A1 /* ReplyListener.m */; };
-		47A9016617E80C6600EBE6A3 /* Iircutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA96C17E4243F003C42CF /* Iircutils.m */; };
-		47A9016717E80C6600EBE6A3 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
-		47A9016817E80C6600EBE6A3 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72F17E51D2300EE09A1 /* Channel.m */; };
-		47A9016917E80C6600EBE6A3 /* ITX_Bot.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A017E4271E003C42CF /* ITX_Bot.m */; };
-		47A9016A17E80C6600EBE6A3 /* ITX_Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A217E4271E003C42CF /* ITX_Client.m */; };
-		47A9016B17E80C6600EBE6A3 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98D17E42717003C42CF /* Connection.m */; };
-		47A9016C17E80C6600EBE6A3 /* Ctcp.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98F17E42717003C42CF /* Ctcp.m */; };
-		47A9016D17E80C6600EBE6A3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99117E42717003C42CF /* Event.m */; };
-		47A9016E17E80C6600EBE6A3 /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99317E42717003C42CF /* Format.m */; };
-		47A9016F17E80C6600EBE6A3 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
-		47A9017017E80C6600EBE6A3 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99717E42717003C42CF /* Response.m */; };
-		47A9017117E80C7100EBE6A3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		223B3231186902DC00A30749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 474BA95A17E4243F003C42CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 474BA96117E4243F003C42CF;
+			remoteInfo = Iircutils;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		474BA96017E4243F003C42CF /* CopyFiles */ = {
@@ -66,18 +66,39 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		223B32021868B56900A30749 /* EventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDispatcher.h; path = Handlers/EventDispatcher.h; sourceTree = "<group>"; };
+		223B32031868B56900A30749 /* EventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDispatcher.m; path = Handlers/EventDispatcher.m; sourceTree = "<group>"; };
+		223B32051868D3FB00A30749 /* EventElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventElement.h; sourceTree = "<group>"; };
+		223B32061868D3FB00A30749 /* EventElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventElement.m; sourceTree = "<group>"; };
+		223B32081868D88C00A30749 /* EventListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListenerTest.m; sourceTree = "<group>"; };
+		223B320A1868E0C500A30749 /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
+		223B320B1868E0C500A30749 /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
+		223B320E1868FB9E00A30749 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		223B320F1868FB9E00A30749 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		223B32101868FB9E00A30749 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		223B32111868FB9E00A30749 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		223B32141868FBA500A30749 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		223B32151868FBA500A30749 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		223B32161868FBA500A30749 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		223B32171868FBA500A30749 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		223B321A1869008400A30749 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
+		223B321C1869019100A30749 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		223B3224186902DC00A30749 /* Iircutils Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Iircutils Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223B322A186902DC00A30749 /* Iircutils Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Iircutils Tests-Info.plist"; sourceTree = "<group>"; };
+		223B322C186902DC00A30749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		223B322E186902DC00A30749 /* Iircutils_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Iircutils_Tests.m; sourceTree = "<group>"; };
+		223B3230186902DC00A30749 /* Iircutils Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iircutils Tests-Prefix.pch"; sourceTree = "<group>"; };
+		223B32361869032C00A30749 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
 		4749C72617E5176700EE09A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4749C72E17E51D2300EE09A1 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
 		4749C72F17E51D2300EE09A1 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
 		4749C73517E51DC600EE09A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4749C73717E51F4900EE09A1 /* IRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRCData.m; path = Models/IRCData.m; sourceTree = "<group>"; };
 		4749C73817E51F4900EE09A1 /* IRCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRCData.h; path = Models/IRCData.h; sourceTree = "<group>"; };
-		4749C73B17E5409500EE09A1 /* EvenListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EvenListener.h; path = Handlers/EventListener/EvenListener.h; sourceTree = "<group>"; };
-		4749C73C17E5409500EE09A1 /* EvenListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EvenListener.m; path = Handlers/EventListener/EvenListener.m; sourceTree = "<group>"; };
+		4749C73B17E5409500EE09A1 /* EventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListener.h; path = Handlers/EventListener/EventListener.h; sourceTree = "<group>"; };
+		4749C73C17E5409500EE09A1 /* EventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListener.m; path = Handlers/EventListener/EventListener.m; sourceTree = "<group>"; };
 		4749C73E17E540CE00EE09A1 /* MessageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageListener.h; path = Handlers/MessageListener/MessageListener.h; sourceTree = "<group>"; };
 		4749C73F17E540CE00EE09A1 /* MessageListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageListener.m; path = Handlers/MessageListener/MessageListener.m; sourceTree = "<group>"; };
-		4749C74117E5412100EE09A1 /* NoticeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeListener.h; path = Handlers/NoticeListener/NoticeListener.h; sourceTree = "<group>"; };
-		4749C74217E5412100EE09A1 /* NoticeListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticeListener.m; path = Handlers/NoticeListener/NoticeListener.m; sourceTree = "<group>"; };
 		4749C74417E5414400EE09A1 /* CTCPListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTCPListener.h; path = Handlers/CTCPListener/CTCPListener.h; sourceTree = "<group>"; };
 		4749C74517E5414400EE09A1 /* CTCPListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTCPListener.m; path = Handlers/CTCPListener/CTCPListener.m; sourceTree = "<group>"; };
 		4749C74717E5416B00EE09A1 /* ReplyListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReplyListener.h; path = Handlers/ReplyListener/ReplyListener.h; sourceTree = "<group>"; };
@@ -104,41 +125,72 @@
 		474BA9A117E4271E003C42CF /* ITX_Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITX_Client.h; sourceTree = "<group>"; };
 		474BA9A217E4271E003C42CF /* ITX_Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITX_Client.m; sourceTree = "<group>"; };
 		47A9012417E8046000EBE6A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		47A9014D17E80B4400EBE6A3 /* UnittestSuite.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnittestSuite.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A9015317E80B4400EBE6A3 /* UnittestSuite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnittestSuite-Info.plist"; sourceTree = "<group>"; };
 		47A9015517E80B4400EBE6A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		47A9015717E80B4400EBE6A3 /* UnittestSuite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnittestSuite.h; sourceTree = "<group>"; };
-		47A9015817E80B4400EBE6A3 /* UnittestSuite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnittestSuite.m; sourceTree = "<group>"; };
 		47A9015A17E80B4500EBE6A3 /* UnittestSuite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnittestSuite-Prefix.pch"; sourceTree = "<group>"; };
-		47A9015E17E80B6500EBE6A3 /* ProtocolUnittest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolUnittest.h; sourceTree = "<group>"; };
 		47A9015F17E80B6500EBE6A3 /* ProtocolUnittest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolUnittest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		223B3221186902DC00A30749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				223B3225186902DC00A30749 /* XCTest.framework in Frameworks */,
+				223B3227186902DC00A30749 /* UIKit.framework in Frameworks */,
+				223B3226186902DC00A30749 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		474BA95F17E4243F003C42CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223B321D1869019100A30749 /* XCTest.framework in Frameworks */,
 				4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */,
 				4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */,
 				474BA96617E4243F003C42CF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47A9014917E80B4400EBE6A3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47A9017117E80C7100EBE6A3 /* CFNetwork.framework in Frameworks */,
-				47A9014E17E80B4400EBE6A3 /* SenTestingKit.framework in Frameworks */,
-				47A9014F17E80B4400EBE6A3 /* UIKit.framework in Frameworks */,
-				47A9015017E80B4400EBE6A3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223B320D1868FB8B00A30749 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				223B32141868FBA500A30749 /* AsyncSocket.h */,
+				223B32151868FBA500A30749 /* AsyncSocket.m */,
+				223B32161868FBA500A30749 /* AsyncUdpSocket.h */,
+				223B32171868FBA500A30749 /* AsyncUdpSocket.m */,
+				223B320E1868FB9E00A30749 /* GCDAsyncSocket.h */,
+				223B320F1868FB9E00A30749 /* GCDAsyncSocket.m */,
+				223B32101868FB9E00A30749 /* GCDAsyncUdpSocket.h */,
+				223B32111868FB9E00A30749 /* GCDAsyncUdpSocket.m */,
+			);
+			name = AsyncSocket;
+			sourceTree = "<group>";
+		};
+		223B3228186902DC00A30749 /* Iircutils Tests */ = {
+			isa = PBXGroup;
+			children = (
+				223B32361869032C00A30749 /* ConnectionTest.m */,
+				223B322E186902DC00A30749 /* Iircutils_Tests.m */,
+				223B3229186902DC00A30749 /* Supporting Files */,
+			);
+			path = "Iircutils Tests";
+			sourceTree = "<group>";
+		};
+		223B3229186902DC00A30749 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				223B322A186902DC00A30749 /* Iircutils Tests-Info.plist */,
+				223B322B186902DC00A30749 /* InfoPlist.strings */,
+				223B3230186902DC00A30749 /* Iircutils Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4749C72D17E51D1100EE09A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,16 +207,20 @@
 		4749C73A17E5407300EE09A1 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				4749C73B17E5409500EE09A1 /* EvenListener.h */,
-				4749C73C17E5409500EE09A1 /* EvenListener.m */,
+				4749C73B17E5409500EE09A1 /* EventListener.h */,
+				4749C73C17E5409500EE09A1 /* EventListener.m */,
 				4749C73E17E540CE00EE09A1 /* MessageListener.h */,
 				4749C73F17E540CE00EE09A1 /* MessageListener.m */,
-				4749C74117E5412100EE09A1 /* NoticeListener.h */,
-				4749C74217E5412100EE09A1 /* NoticeListener.m */,
 				4749C74417E5414400EE09A1 /* CTCPListener.h */,
 				4749C74517E5414400EE09A1 /* CTCPListener.m */,
 				4749C74717E5416B00EE09A1 /* ReplyListener.h */,
 				4749C74817E5416B00EE09A1 /* ReplyListener.m */,
+				223B32021868B56900A30749 /* EventDispatcher.h */,
+				223B32031868B56900A30749 /* EventDispatcher.m */,
+				223B32051868D3FB00A30749 /* EventElement.h */,
+				223B32061868D3FB00A30749 /* EventElement.m */,
+				223B320A1868E0C500A30749 /* EventObject.h */,
+				223B320B1868E0C500A30749 /* EventObject.m */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -174,6 +230,7 @@
 			children = (
 				474BA96717E4243F003C42CF /* Iircutils */,
 				47A9015117E80B4400EBE6A3 /* UnittestSuite */,
+				223B3228186902DC00A30749 /* Iircutils Tests */,
 				474BA96417E4243F003C42CF /* Frameworks */,
 				474BA96317E4243F003C42CF /* Products */,
 			);
@@ -183,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				474BA96217E4243F003C42CF /* libIircutils.a */,
-				47A9014D17E80B4400EBE6A3 /* UnittestSuite.octest */,
+				223B3224186902DC00A30749 /* Iircutils Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +248,7 @@
 		474BA96417E4243F003C42CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				223B321C1869019100A30749 /* XCTest.framework */,
 				4749C73517E51DC600EE09A1 /* SenTestingKit.framework */,
 				4749C72617E5176700EE09A1 /* CFNetwork.framework */,
 				474BA96517E4243F003C42CF /* Foundation.framework */,
@@ -202,6 +260,7 @@
 		474BA96717E4243F003C42CF /* Iircutils */ = {
 			isa = PBXGroup;
 			children = (
+				223B320D1868FB8B00A30749 /* AsyncSocket */,
 				4749C73A17E5407300EE09A1 /* Handlers */,
 				4749C72D17E51D1100EE09A1 /* Models */,
 				474BA99E17E4271E003C42CF /* Interface */,
@@ -252,10 +311,9 @@
 		47A9015117E80B4400EBE6A3 /* UnittestSuite */ = {
 			isa = PBXGroup;
 			children = (
-				47A9015717E80B4400EBE6A3 /* UnittestSuite.h */,
-				47A9015817E80B4400EBE6A3 /* UnittestSuite.m */,
-				47A9015E17E80B6500EBE6A3 /* ProtocolUnittest.h */,
 				47A9015F17E80B6500EBE6A3 /* ProtocolUnittest.m */,
+				223B32081868D88C00A30749 /* EventListenerTest.m */,
+				223B321A1869008400A30749 /* ConnectionTest.m */,
 				47A9015217E80B4400EBE6A3 /* Supporting Files */,
 			);
 			path = UnittestSuite;
@@ -274,6 +332,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		223B3223186902DC00A30749 /* Iircutils Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 223B3233186902DC00A30749 /* Build configuration list for PBXNativeTarget "Iircutils Tests" */;
+			buildPhases = (
+				223B3220186902DC00A30749 /* Sources */,
+				223B3221186902DC00A30749 /* Frameworks */,
+				223B3222186902DC00A30749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				223B3232186902DC00A30749 /* PBXTargetDependency */,
+			);
+			name = "Iircutils Tests";
+			productName = "Iircutils Tests";
+			productReference = 223B3224186902DC00A30749 /* Iircutils Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		474BA96117E4243F003C42CF /* Iircutils */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 474BA97017E4243F003C42CF /* Build configuration list for PBXNativeTarget "Iircutils" */;
@@ -291,24 +367,6 @@
 			productReference = 474BA96217E4243F003C42CF /* libIircutils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		47A9014C17E80B4400EBE6A3 /* UnittestSuite */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47A9015B17E80B4500EBE6A3 /* Build configuration list for PBXNativeTarget "UnittestSuite" */;
-			buildPhases = (
-				47A9014817E80B4400EBE6A3 /* Sources */,
-				47A9014917E80B4400EBE6A3 /* Frameworks */,
-				47A9014A17E80B4400EBE6A3 /* Resources */,
-				47A9014B17E80B4400EBE6A3 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UnittestSuite;
-			productName = UnittestSuite;
-			productReference = 47A9014D17E80B4400EBE6A3 /* UnittestSuite.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -317,6 +375,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Realfree;
+				TargetAttributes = {
+					223B3223186902DC00A30749 = {
+						TestTargetID = 474BA96117E4243F003C42CF;
+					};
+				};
 			};
 			buildConfigurationList = 474BA95D17E4243F003C42CF /* Build configuration list for PBXProject "Iircutils" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -331,90 +394,80 @@
 			projectRoot = "";
 			targets = (
 				474BA96117E4243F003C42CF /* Iircutils */,
-				47A9014C17E80B4400EBE6A3 /* UnittestSuite */,
+				223B3223186902DC00A30749 /* Iircutils Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		47A9014A17E80B4400EBE6A3 /* Resources */ = {
+		223B3222186902DC00A30749 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47A9015617E80B4400EBE6A3 /* InfoPlist.strings in Resources */,
+				223B322D186902DC00A30749 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		47A9014B17E80B4400EBE6A3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		223B3220186902DC00A30749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */,
+				223B32371869032C00A30749 /* ConnectionTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		474BA95E17E4243F003C42CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				474BA96D17E4243F003C42CF /* Iircutils.m in Sources */,
+				223B32071868D3FB00A30749 /* EventElement.m in Sources */,
 				474BA99817E42717003C42CF /* Connection.m in Sources */,
 				474BA99917E42717003C42CF /* Ctcp.m in Sources */,
 				474BA99A17E42717003C42CF /* Event.m in Sources */,
 				474BA99B17E42717003C42CF /* Format.m in Sources */,
+				223B32181868FBA500A30749 /* AsyncSocket.m in Sources */,
 				474BA99C17E42717003C42CF /* Protocol.m in Sources */,
 				474BA99D17E42717003C42CF /* Response.m in Sources */,
 				474BA9A317E4271E003C42CF /* ITX_Bot.m in Sources */,
+				223B320C1868E0C500A30749 /* EventObject.m in Sources */,
+				223B32041868B56900A30749 /* EventDispatcher.m in Sources */,
 				474BA9A417E4271E003C42CF /* ITX_Client.m in Sources */,
 				4749C73017E51D2300EE09A1 /* Channel.m in Sources */,
 				4749C73917E51F4900EE09A1 /* IRCData.m in Sources */,
-				4749C73D17E5409500EE09A1 /* EvenListener.m in Sources */,
+				4749C73D17E5409500EE09A1 /* EventListener.m in Sources */,
 				4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */,
-				4749C74317E5412100EE09A1 /* NoticeListener.m in Sources */,
+				223B32131868FB9E00A30749 /* GCDAsyncUdpSocket.m in Sources */,
 				4749C74617E5414400EE09A1 /* CTCPListener.m in Sources */,
+				223B32191868FBA500A30749 /* AsyncUdpSocket.m in Sources */,
+				223B32121868FB9E00A30749 /* GCDAsyncSocket.m in Sources */,
 				4749C74917E5416B00EE09A1 /* ReplyListener.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47A9014817E80B4400EBE6A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47A9016117E80C6600EBE6A3 /* EvenListener.m in Sources */,
-				47A9016217E80C6600EBE6A3 /* MessageListener.m in Sources */,
-				47A9016317E80C6600EBE6A3 /* NoticeListener.m in Sources */,
-				47A9016417E80C6600EBE6A3 /* CTCPListener.m in Sources */,
-				47A9016517E80C6600EBE6A3 /* ReplyListener.m in Sources */,
-				47A9016617E80C6600EBE6A3 /* Iircutils.m in Sources */,
-				47A9016717E80C6600EBE6A3 /* IRCData.m in Sources */,
-				47A9016817E80C6600EBE6A3 /* Channel.m in Sources */,
-				47A9016917E80C6600EBE6A3 /* ITX_Bot.m in Sources */,
-				47A9016A17E80C6600EBE6A3 /* ITX_Client.m in Sources */,
-				47A9016B17E80C6600EBE6A3 /* Connection.m in Sources */,
-				47A9016C17E80C6600EBE6A3 /* Ctcp.m in Sources */,
-				47A9016D17E80C6600EBE6A3 /* Event.m in Sources */,
-				47A9016E17E80C6600EBE6A3 /* Format.m in Sources */,
-				47A9016F17E80C6600EBE6A3 /* Protocol.m in Sources */,
-				47A9017017E80C6600EBE6A3 /* Response.m in Sources */,
-				47A9015917E80B4400EBE6A3 /* UnittestSuite.m in Sources */,
-				47A9016017E80B6500EBE6A3 /* ProtocolUnittest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		223B3232186902DC00A30749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 474BA96117E4243F003C42CF /* Iircutils */;
+			targetProxy = 223B3231186902DC00A30749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		223B322B186902DC00A30749 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				223B322C186902DC00A30749 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		47A9015417E80B4400EBE6A3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -426,6 +479,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		223B3234186902DC00A30749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Iircutils Tests/Iircutils Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Iircutils Tests/Iircutils Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		223B3235186902DC00A30749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Iircutils Tests/Iircutils Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Iircutils Tests/Iircutils Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		474BA96E17E4243F003C42CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -485,7 +595,8 @@
 				DSTROOT = /tmp/Iircutils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\\\"",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iircutils/Iircutils-Prefix.pch";
@@ -501,7 +612,8 @@
 				DSTROOT = /tmp/Iircutils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\\\"",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iircutils/Iircutils-Prefix.pch";
@@ -511,41 +623,17 @@
 			};
 			name = Release;
 		};
-		47A9015C17E80B4500EBE6A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnittestSuite/UnittestSuite-Prefix.pch";
-				INFOPLIST_FILE = "UnittestSuite/UnittestSuite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		47A9015D17E80B4500EBE6A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnittestSuite/UnittestSuite-Prefix.pch";
-				INFOPLIST_FILE = "UnittestSuite/UnittestSuite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		223B3233186902DC00A30749 /* Build configuration list for PBXNativeTarget "Iircutils Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				223B3234186902DC00A30749 /* Debug */,
+				223B3235186902DC00A30749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		474BA95D17E4243F003C42CF /* Build configuration list for PBXProject "Iircutils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -563,14 +651,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		47A9015B17E80B4500EBE6A3 /* Build configuration list for PBXNativeTarget "UnittestSuite" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47A9015C17E80B4500EBE6A3 /* Debug */,
-				47A9015D17E80B4500EBE6A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
