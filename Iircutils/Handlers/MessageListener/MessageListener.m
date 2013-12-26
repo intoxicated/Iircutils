@@ -12,7 +12,7 @@
 
 @implementation MessageListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"PRIVMSG"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -22,7 +22,7 @@
 
 @implementation PrivateMessageListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     StandardEvent * e = (StandardEvent *)event;
     if ([event.command isEqualToString:@"PRIVMSG"] &&
@@ -34,7 +34,7 @@
 
 @implementation ChannelMessageListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     StandardEvent * e = (StandardEvent *)event;
     if ([event.command isEqualToString:@"NOTICE"] &&
@@ -46,7 +46,7 @@
 
 @implementation NoticeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"NOTICE"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -56,7 +56,7 @@
 
 @implementation PrivateNoticeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     StandardEvent * e = (StandardEvent *)event;
     if ([event.command isEqualToString:@"NOTICE"] &&
@@ -68,7 +68,7 @@
 
 @implementation ChannelNoticeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     StandardEvent * e = (StandardEvent *)event;
     if ([event.command isEqualToString:@"NOTICE"] &&

@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ITX_Client;
+@class SimpleClient;
 @class EventListener;
 
 @interface EventDispatcher : NSObject
@@ -25,7 +25,7 @@
 //singleton methods
 
 + (void)register_listener:(NSString *)name listener:(id)listener;
-+ (void)dispatch:(ITX_Client *)client event:()event;
++ (void)dispatch:(SimpleClient *)client event:()event;
 
 + (void)setListener:(NSString *)name listener:(EventListener *)listener;
 + (id)getListener:(NSString *)name;

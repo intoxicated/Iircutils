@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ITX_Client : NSObject
+@interface SimpleClient : NSObject
 
 @end

@@ -42,8 +42,8 @@
 		474BA99B17E42717003C42CF /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99317E42717003C42CF /* Format.m */; };
 		474BA99C17E42717003C42CF /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
 		474BA99D17E42717003C42CF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99717E42717003C42CF /* Response.m */; };
-		474BA9A317E4271E003C42CF /* ITX_Bot.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A017E4271E003C42CF /* ITX_Bot.m */; };
-		474BA9A417E4271E003C42CF /* ITX_Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A217E4271E003C42CF /* ITX_Client.m */; };
+		474BA9A317E4271E003C42CF /* SimpleBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A017E4271E003C42CF /* SimpleBot.m */; };
+		474BA9A417E4271E003C42CF /* SimpleClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA9A217E4271E003C42CF /* SimpleClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,10 +122,10 @@
 		474BA99517E42717003C42CF /* Protocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protocol.m; sourceTree = "<group>"; };
 		474BA99617E42717003C42CF /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		474BA99717E42717003C42CF /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
-		474BA99F17E4271E003C42CF /* ITX_Bot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITX_Bot.h; sourceTree = "<group>"; };
-		474BA9A017E4271E003C42CF /* ITX_Bot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITX_Bot.m; sourceTree = "<group>"; };
-		474BA9A117E4271E003C42CF /* ITX_Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITX_Client.h; sourceTree = "<group>"; };
-		474BA9A217E4271E003C42CF /* ITX_Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITX_Client.m; sourceTree = "<group>"; };
+		474BA99F17E4271E003C42CF /* SimpleBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleBot.h; sourceTree = "<group>"; };
+		474BA9A017E4271E003C42CF /* SimpleBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleBot.m; sourceTree = "<group>"; };
+		474BA9A117E4271E003C42CF /* SimpleClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleClient.h; sourceTree = "<group>"; };
+		474BA9A217E4271E003C42CF /* SimpleClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleClient.m; sourceTree = "<group>"; };
 		47A9012417E8046000EBE6A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -297,10 +297,10 @@
 		474BA99E17E4271E003C42CF /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				474BA99F17E4271E003C42CF /* ITX_Bot.h */,
-				474BA9A017E4271E003C42CF /* ITX_Bot.m */,
-				474BA9A117E4271E003C42CF /* ITX_Client.h */,
-				474BA9A217E4271E003C42CF /* ITX_Client.m */,
+				474BA99F17E4271E003C42CF /* SimpleBot.h */,
+				474BA9A017E4271E003C42CF /* SimpleBot.m */,
+				474BA9A117E4271E003C42CF /* SimpleClient.h */,
+				474BA9A217E4271E003C42CF /* SimpleClient.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -413,10 +413,10 @@
 				223B32181868FBA500A30749 /* AsyncSocket.m in Sources */,
 				474BA99C17E42717003C42CF /* Protocol.m in Sources */,
 				474BA99D17E42717003C42CF /* Response.m in Sources */,
-				474BA9A317E4271E003C42CF /* ITX_Bot.m in Sources */,
+				474BA9A317E4271E003C42CF /* SimpleBot.m in Sources */,
 				223B320C1868E0C500A30749 /* EventObject.m in Sources */,
 				223B32041868B56900A30749 /* EventDispatcher.m in Sources */,
-				474BA9A417E4271E003C42CF /* ITX_Client.m in Sources */,
+				474BA9A417E4271E003C42CF /* SimpleClient.m in Sources */,
 				4749C73017E51D2300EE09A1 /* Channel.m in Sources */,
 				4749C73917E51F4900EE09A1 /* IRCData.m in Sources */,
 				4749C73D17E5409500EE09A1 /* EventListener.m in Sources */,

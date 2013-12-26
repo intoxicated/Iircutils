@@ -78,7 +78,7 @@
 }
 
 /* */
-- (void)notify:(ITX_Client *)client event:(Event *)event
+- (void)notify:(SimpleClient *)client event:(Event *)event
 {
     [NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
 }
@@ -99,7 +99,7 @@
     return self;
 }
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     NSArray * a1 = [self.data.params sortedArrayUsingSelector:@selector(compare:)];
     NSArray * a2 = [event.params sortedArrayUsingSelector:@selector(compare:)];
@@ -114,7 +114,7 @@
 
 @implementation AnyListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
 }
@@ -123,7 +123,7 @@
 
 @implementation WelcomeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"RPL_WELCOME"])
       [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -133,7 +133,7 @@
 
 @implementation NickChangeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"NICK"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -143,7 +143,7 @@
 
 @implementation PingListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"PING"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -153,7 +153,7 @@
 
 @implementation InviteListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"INVITE"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -163,7 +163,7 @@
 
 @implementation KickListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"KICK"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -173,7 +173,7 @@
 
 @implementation JoinListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"JOIN"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -183,7 +183,7 @@
 
 @implementation QuitListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"QUIT"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -193,7 +193,7 @@
 
 @implementation PartListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"PART"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -203,7 +203,7 @@
 
 @implementation ErrorListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if ([event.command isEqualToString:@"ERROR"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];

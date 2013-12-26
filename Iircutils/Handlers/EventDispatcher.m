@@ -53,7 +53,7 @@ static dispatch_once_t onceToken;
     
 }
 
-+ (void)dispatch:(ITX_Client *)client event:(EventListener *)event
++ (void)dispatch:(SimpleClient *)client event:(EventListener *)event
 {
     
 }

@@ -10,7 +10,7 @@
 #import "EventObject.h"
 
 @implementation CTCPListener
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -19,7 +19,7 @@
 
 @implementation CTCPActionListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_ACTION"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -29,7 +29,7 @@
 
 @implementation CTCPUserInfoListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_USERINFO"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -39,7 +39,7 @@
 
 @implementation CTCPClientListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_CLIENTINFO"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -49,7 +49,7 @@
 
 @implementation CTCPVersionListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_VERSION"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -59,7 +59,7 @@
 
 @implementation CTCPPingListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_PING"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -69,7 +69,7 @@
 
 @implementation CTCPErrorListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_ERROR"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -79,7 +79,7 @@
 
 @implementation CTCPTimeListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_TIME"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];
@@ -89,7 +89,7 @@
 
 @implementation DCCListener
 
--(void)notify:(ITX_Client *)client event:(Event *)event
+-(void)notify:(SimpleClient *)client event:(Event *)event
 {
     if([event.command hasPrefix:@"CTCP_DCC"])
         [super activate_handlder:[NSArray arrayWithObjects:client, event, nil]];

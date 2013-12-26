@@ -11,6 +11,14 @@
 
 @end
 
+#define X_DELIM @"\x01"
+#define M_QUOTE @"\x10"
+#define X_QUOTE @"\\"
+
+static NSArray * commands = nil;
+static NSDictionary * ctcp_quote_map = nil;
+static NSDictionary * low_quote_map = nil;
+
 @implementation CTCP
 
 @end

@@ -1,13 +1,13 @@
 //
-//  ITX_Bot.h
+//  ITX_Client.m
 //  Iircutils
 //
 //  Created by Realfree on 9/14/13.
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SimpleClient.h"
 
-@interface ITX_Bot : NSObject
+@implementation SimpleClient
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ITX_Client;
+@class SimpleClient;
 @class EventListener;
 @class IRCData;
 @class Event;
@@ -24,7 +24,7 @@
 - (void)add_handler:(id)handler priority:(NSInteger)priority;
 - (void)remove_handler:(id)handler;
 - (void)activate_handlder:(NSArray *)args;
-- (void)notify:(ITX_Client *)client event:(Event *)event;
+- (void)notify:(SimpleClient *)client event:(Event *)event;
 
 @end
 
