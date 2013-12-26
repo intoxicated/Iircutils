@@ -7,6 +7,7 @@
 //
 
 #import "IRCData.h"
+#import "Protocol.h"
 
 @implementation IRCData
 @synthesize command = _command;
@@ -15,7 +16,7 @@
 
 - (IRCData *)init
 {
-    if (!(self = [super init]))
+    if(self = [super init])
     {
         
     }

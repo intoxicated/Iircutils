@@ -5,20 +5,168 @@
 //  Created by Realfree on 9/14/13.
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "Connection.h"
 #import "AsyncSocket.h"
 #import "GCDAsyncSocket.h"
 
+@interface Connection (PrivateAPI)
+- (void)logError:(NSString *)msg;
+- (void)logInfo:(NSString *)msg;
+- (void)logMessage:(NSString *)msg;
+@end
+
 @implementation Connection
 @synthesize auto_ping_respond = _auto_ping_respond;
 @synthesize terminator = _terminator;
 @synthesize incomingData = _incomingData;
+@synthesize asyncSock = _asyncSock;
+@synthesize _hostname, _port;
 
--(void)init:(BOOL)isIPv6{
+-(id)init:(BOOL)isIPv6 delegate:(id)del{
     //async connection to IRC server
     self.auto_ping_respond = YES;
-    self.terminator = @"\r\n";
+    self.terminator = [AsyncSocket CRLFData];
+    
+    if (self = [super init])
+    {
+        if(del != nil)
+            self.asyncSock = [[AsyncSocket alloc] initWithDelegate:del];
+        else
+            self.asyncSock = [[AsyncSocket alloc] initWithDelegate:self];
+    }
+    return self;
+}
+
+-(void)connect:(NSString *)hostname port:(NSInteger)port password:(NSString *)pw
+{
+    _hostname = hostname;
+    _port = port;
+    
+    //use ssl?
+    NSError * err;
+    [self.asyncSock connectToHost:_hostname onPort:port error:&err];
+    if(![pw isEqualToString:@""])
+        [self execute:@"PASS" param:[NSArray arrayWithObjects:pw, nil] kwargs:nil];
+}
+
+-(void)handle_line:(IRCData *)data
+{
+    [NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
+}
+
+-(void)execute:(NSString *)command param:(NSArray *)params kwargs:(NSString *)args
+{
+    NSMutableArray * rawArgs = [[NSMutableArray alloc] initWithArray:params];
+    NSString * raw;
+    if(args != nil)
+    {
+        [rawArgs addObject:[[args componentsSeparatedByString:@"tailing"] objectAtIndex:1]];
+        raw = [rawArgs componentsJoinedByString:@" "];
+    }
+    
+    NSData *data = [raw dataUsingEncoding:NSUTF8StringEncoding];
+
+    [self.asyncSock writeData:data withTimeout:-1 tag:1];
+}
+
+-(void)start_all
+{
+    //start multiple bots in same loop TBI
+}
+
+-(void)disconnect
+{
+    [self.asyncSock disconnect];
+    
+}
+
+#pragma mark - async socket
+- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+	//if(tag == ECHO_MSG)
+	//{
+		//[sock readDataToData:[AsyncSocket CRLFData] withTimeout:READ_TIMEOUT tag:0];
+	//}
+}
+
+- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+	NSData *strData = [data subdataWithRange:NSMakeRange(0, [data length] - 2)];
+	NSString *msg = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
+	if(msg)
+	{
+		[self logMessage:msg];
+	}
+	else
+	{
+		[self logError:@"Error converting received data into UTF-8 String"];
+	}
+	
+	// Even if we were unable to write the incoming data to the log,
+	// we're still going to echo it back to the client.
+	//[sock writeData:data withTimeout:-1 tag:ECHO_MSG];
+}
+
+- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
+{
+	NSLog(@"didConnect! %@:%hu", host, port);
+	
+    //now waiting for server respond
+    [sock readDataToData:self.terminator withTimeout:-1 tag:0];
+}
+
+- (NSTimeInterval)onSocket:(AsyncSocket *)sock
+  shouldTimeoutReadWithTag:(long)tag
+				   elapsed:(NSTimeInterval)elapsed
+				 bytesDone:(NSUInteger)length
+{
+/*	if(elapsed <= READ_TIMEOUT)
+	{
+		NSString *warningMsg = @"Are you still there?\r\n";
+		NSData *warningData = [warningMsg dataUsingEncoding:NSUTF8StringEncoding];
+		
+		[sock writeData:warningData withTimeout:-1 tag:WARNING_MSG];
+		
+		return READ_TIMEOUT_EXTENSION;
+	}
+	*/
+	return 0.0;
+}
+
+- (void)logError:(NSString *)msg
+{
+	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
+	
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
+	[attributes setObject:[UIColor redColor] forKey:NSForegroundColorAttributeName];
+	
+	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
+    NSLog(@"error: %@", msg);
+}
+
+- (void)logInfo:(NSString *)msg
+{
+	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
+	
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
+	[attributes setObject:[UIColor purpleColor] forKey:NSForegroundColorAttributeName];
+	
+	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
+    NSLog(@"info: %@", msg);
+}
+
+- (void)logMessage:(NSString *)msg
+{
+	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
+	
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
+	[attributes setObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+	
+	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
+    NSLog(@"message: %@", msg);
 }
 
 @end

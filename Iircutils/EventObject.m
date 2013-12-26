@@ -37,7 +37,8 @@
 
 @implementation CTCPEvent
 
--(id)init{
+-(id)init
+{
     return self;
 }
 

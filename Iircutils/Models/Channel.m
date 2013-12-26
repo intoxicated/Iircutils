@@ -14,7 +14,7 @@
 
 -(Channel *)init
 {
-    if (!(self = [super init]))
+    if (self = [super init])
     {
         self.user_list = [[NSMutableArray alloc] init];
     }

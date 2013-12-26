@@ -21,6 +21,10 @@
 		223B322D186902DC00A30749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223B322B186902DC00A30749 /* InfoPlist.strings */; };
 		223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B322E186902DC00A30749 /* Iircutils_Tests.m */; };
 		223B32371869032C00A30749 /* ConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32361869032C00A30749 /* ConnectionTest.m */; };
+		226BE962186CD551006B91B3 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98D17E42717003C42CF /* Connection.m */; };
+		226BE963186CD591006B91B3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32151868FBA500A30749 /* AsyncSocket.m */; };
+		226BE964186CD59D006B91B3 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
+		226BE965186CD5AC006B91B3 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
 		4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
 		4749C73017E51D2300EE09A1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72F17E51D2300EE09A1 /* Channel.m */; };
 		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
@@ -33,7 +37,7 @@
 		474BA96B17E4243F003C42CF /* Iircutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 474BA96A17E4243F003C42CF /* Iircutils.h */; };
 		474BA96D17E4243F003C42CF /* Iircutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA96C17E4243F003C42CF /* Iircutils.m */; };
 		474BA99817E42717003C42CF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98D17E42717003C42CF /* Connection.m */; };
-		474BA99917E42717003C42CF /* Ctcp.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98F17E42717003C42CF /* Ctcp.m */; };
+		474BA99917E42717003C42CF /* CTCP.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98F17E42717003C42CF /* CTCP.m */; };
 		474BA99A17E42717003C42CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99117E42717003C42CF /* Event.m */; };
 		474BA99B17E42717003C42CF /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99317E42717003C42CF /* Format.m */; };
 		474BA99C17E42717003C42CF /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
@@ -70,7 +74,6 @@
 		223B32031868B56900A30749 /* EventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDispatcher.m; path = Handlers/EventDispatcher.m; sourceTree = "<group>"; };
 		223B32051868D3FB00A30749 /* EventElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventElement.h; sourceTree = "<group>"; };
 		223B32061868D3FB00A30749 /* EventElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventElement.m; sourceTree = "<group>"; };
-		223B32081868D88C00A30749 /* EventListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListenerTest.m; sourceTree = "<group>"; };
 		223B320A1868E0C500A30749 /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
 		223B320B1868E0C500A30749 /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
 		223B320E1868FB9E00A30749 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -81,7 +84,6 @@
 		223B32151868FBA500A30749 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		223B32161868FBA500A30749 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		223B32171868FBA500A30749 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
-		223B321A1869008400A30749 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
 		223B321C1869019100A30749 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		223B3224186902DC00A30749 /* Iircutils Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Iircutils Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		223B322A186902DC00A30749 /* Iircutils Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Iircutils Tests-Info.plist"; sourceTree = "<group>"; };
@@ -110,8 +112,8 @@
 		474BA96C17E4243F003C42CF /* Iircutils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Iircutils.m; sourceTree = "<group>"; };
 		474BA98C17E42717003C42CF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
 		474BA98D17E42717003C42CF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
-		474BA98E17E42717003C42CF /* Ctcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ctcp.h; sourceTree = "<group>"; };
-		474BA98F17E42717003C42CF /* Ctcp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ctcp.m; sourceTree = "<group>"; };
+		474BA98E17E42717003C42CF /* CTCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCP.h; sourceTree = "<group>"; };
+		474BA98F17E42717003C42CF /* CTCP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCP.m; sourceTree = "<group>"; };
 		474BA99017E42717003C42CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		474BA99117E42717003C42CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		474BA99217E42717003C42CF /* Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Format.h; sourceTree = "<group>"; };
@@ -125,10 +127,6 @@
 		474BA9A117E4271E003C42CF /* ITX_Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITX_Client.h; sourceTree = "<group>"; };
 		474BA9A217E4271E003C42CF /* ITX_Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITX_Client.m; sourceTree = "<group>"; };
 		47A9012417E8046000EBE6A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		47A9015317E80B4400EBE6A3 /* UnittestSuite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnittestSuite-Info.plist"; sourceTree = "<group>"; };
-		47A9015517E80B4400EBE6A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		47A9015A17E80B4500EBE6A3 /* UnittestSuite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnittestSuite-Prefix.pch"; sourceTree = "<group>"; };
-		47A9015F17E80B6500EBE6A3 /* ProtocolUnittest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolUnittest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				474BA96717E4243F003C42CF /* Iircutils */,
-				47A9015117E80B4400EBE6A3 /* UnittestSuite */,
 				223B3228186902DC00A30749 /* Iircutils Tests */,
 				474BA96417E4243F003C42CF /* Frameworks */,
 				474BA96317E4243F003C42CF /* Products */,
@@ -283,8 +280,8 @@
 			children = (
 				474BA98C17E42717003C42CF /* Connection.h */,
 				474BA98D17E42717003C42CF /* Connection.m */,
-				474BA98E17E42717003C42CF /* Ctcp.h */,
-				474BA98F17E42717003C42CF /* Ctcp.m */,
+				474BA98E17E42717003C42CF /* CTCP.h */,
+				474BA98F17E42717003C42CF /* CTCP.m */,
 				474BA99017E42717003C42CF /* Event.h */,
 				474BA99117E42717003C42CF /* Event.m */,
 				474BA99217E42717003C42CF /* Format.h */,
@@ -306,27 +303,6 @@
 				474BA9A217E4271E003C42CF /* ITX_Client.m */,
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		47A9015117E80B4400EBE6A3 /* UnittestSuite */ = {
-			isa = PBXGroup;
-			children = (
-				47A9015F17E80B6500EBE6A3 /* ProtocolUnittest.m */,
-				223B32081868D88C00A30749 /* EventListenerTest.m */,
-				223B321A1869008400A30749 /* ConnectionTest.m */,
-				47A9015217E80B4400EBE6A3 /* Supporting Files */,
-			);
-			path = UnittestSuite;
-			sourceTree = "<group>";
-		};
-		47A9015217E80B4400EBE6A3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				47A9015317E80B4400EBE6A3 /* UnittestSuite-Info.plist */,
-				47A9015417E80B4400EBE6A3 /* InfoPlist.strings */,
-				47A9015A17E80B4500EBE6A3 /* UnittestSuite-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226BE965186CD5AC006B91B3 /* IRCData.m in Sources */,
+				226BE964186CD59D006B91B3 /* Protocol.m in Sources */,
+				226BE963186CD591006B91B3 /* AsyncSocket.m in Sources */,
+				226BE962186CD551006B91B3 /* Connection.m in Sources */,
 				223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */,
 				223B32371869032C00A30749 /* ConnectionTest.m in Sources */,
 			);
@@ -427,7 +407,7 @@
 				474BA96D17E4243F003C42CF /* Iircutils.m in Sources */,
 				223B32071868D3FB00A30749 /* EventElement.m in Sources */,
 				474BA99817E42717003C42CF /* Connection.m in Sources */,
-				474BA99917E42717003C42CF /* Ctcp.m in Sources */,
+				474BA99917E42717003C42CF /* CTCP.m in Sources */,
 				474BA99A17E42717003C42CF /* Event.m in Sources */,
 				474BA99B17E42717003C42CF /* Format.m in Sources */,
 				223B32181868FBA500A30749 /* AsyncSocket.m in Sources */,
@@ -464,14 +444,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				223B322C186902DC00A30749 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		47A9015417E80B4400EBE6A3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47A9015517E80B4400EBE6A3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -633,6 +605,7 @@
 				223B3235186902DC00A30749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		474BA95D17E4243F003C42CF /* Build configuration list for PBXProject "Iircutils" */ = {
 			isa = XCConfigurationList;

@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import "Ctcp.h"
+#import "CTCP.h"
+@interface CTCP ()
 
-@implementation Ctcp
+@end
+
+@implementation CTCP
 
 @end
