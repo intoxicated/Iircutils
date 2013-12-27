@@ -11,14 +11,42 @@
 
 @end
 
-#define X_DELIM @"\x01"
-#define M_QUOTE @"\x10"
-#define X_QUOTE @"\\"
-
-static NSArray * commands = nil;
-static NSDictionary * ctcp_quote_map = nil;
-static NSDictionary * low_quote_map = nil;
 
 @implementation CTCP
+
++ (NSString *)tag:(NSString *)message
+{
+    return nil;
+}
+
++ (NSString *)low_level_qoute:(NSString *)text
+{
+    return nil;
+}
+
++ (NSString *)low_level_deqoute:(NSString *)text
+{
+    return nil;
+}
+
++ (NSString *)qoute:(NSString *)text
+{
+    return nil;
+}
+
++ (NSString *)dequote:(NSString *)text
+{
+    return nil;
+}
+
++ (NSArray *)extract:(NSString *)message
+{
+    return nil;
+}
+
++ (NSArray *)parse_request:(NSString *)section
+{
+    return nil;
+}
 
 @end

@@ -8,8 +8,26 @@
 
 #import "Format.h"
 
+//CTCP related
+static NSArray * commands = nil;
+static NSDictionary * ctcp_quote_map = nil;
+static NSDictionary * low_quote_map = nil;
+
+static Format *sharedObject = nil;
+static dispatch_once_t onceToken;
+
 @implementation Format
 
+
+
++ (Format*)sharedManager {
+    dispatch_once(&onceToken, ^{
+        sharedObject = [[self alloc] init];
+     
+    });
+    return sharedObject;
+}
+ 
 + (NSString *)filter:(NSString *)text type:(NSInteger)type
 {
     return nil;

@@ -12,11 +12,11 @@
 
 @implementation EventDispatcher
 @synthesize _listeners;
-static EventDispatcher *sharedObject = nil;
-static dispatch_once_t onceToken;
 
-#pragma mark - Singleton
+//static EventDispatcher *sharedObject = nil;
+//static dispatch_once_t onceToken;
 
+/*
 + (EventDispatcher*)sharedDispatcher {
     
     dispatch_once(&onceToken, ^{
@@ -25,6 +25,7 @@ static dispatch_once_t onceToken;
     });
     return sharedObject;
 }
+*/
 
 - (id)init{
     if(self = [super init])
@@ -38,27 +39,27 @@ static dispatch_once_t onceToken;
 
 - (void)setListener:(NSString *)name listener:(id)listener
 {
-    [sharedObject._listeners setObject:listener forKey:name];
+    [self._listeners setObject:listener forKey:name];
 }
 
 - (EventListener *)getListener:(NSString *)name
 {
-    return [sharedObject._listeners objectForKey:name];
+    return [self._listeners objectForKey:name];
 }
 
 - (NSArray *)allKeys
 {
-    return [sharedObject._listeners allKeys];
+    return [self._listeners allKeys];
 }
 
 - (void)register_listener:(NSString *)name listener:(id)listener
 {
-    [sharedObject._listeners setObject:listener forKey:name];
+    [self._listeners setObject:listener forKey:name];
 }
 
 - (void)dispatch:(id)client event:(Event *)event
 {
-    for(EventListener * listener in [sharedObject._listeners allKeys])
+    for(EventListener * listener in [self._listeners allKeys])
     {
         if(listener.handlers.count != 0)
             [listener notify:client event:event];

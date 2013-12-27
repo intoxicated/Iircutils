@@ -102,7 +102,7 @@
     
 }
 
-#pragma mark - handlers
+#pragma mark - built in handlers
 
 - (void)_update_client_info
 {

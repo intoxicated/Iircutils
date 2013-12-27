@@ -16,10 +16,9 @@
 
 @interface EventDispatcher : NSObject
 
-
 @property (nonatomic, strong) NSMutableDictionary * _listeners;
 
-+ (EventDispatcher *)sharedDispatcher;
+//+ (EventDispatcher *)sharedDispatcher;
 
 
 - (id)init;
