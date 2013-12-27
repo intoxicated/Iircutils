@@ -8,6 +8,7 @@
 
 
 #import "EventDispatcher.h"
+#import "EventListener.h"
 
 @implementation EventDispatcher
 @synthesize _listeners;
@@ -20,42 +21,48 @@ static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
         sharedObject = [[self alloc] init];
+        sharedObject._listeners = [[NSMutableDictionary alloc] init];
     });
     return sharedObject;
 }
 
-- (id)init {
-    if (self = [super init]) {
-        _listeners = [[NSMutableDictionary alloc] init];
+- (id)init{
+    if(self = [super init])
+    {
+        self._listeners = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
 #pragma mark -
 
-+ (void)setListener:(NSString *)name listener:(id)listener
+- (void)setListener:(NSString *)name listener:(id)listener
 {
     [sharedObject._listeners setObject:listener forKey:name];
 }
 
-+ (id)getListener:(NSString *)name
+- (EventListener *)getListener:(NSString *)name
 {
     return [sharedObject._listeners objectForKey:name];
 }
 
-+ (NSArray *)allKeys
+- (NSArray *)allKeys
 {
     return [sharedObject._listeners allKeys];
 }
 
-+ (void)register_listener:(NSString *)name listener:(id)listener
+- (void)register_listener:(NSString *)name listener:(id)listener
 {
-    
+    [sharedObject._listeners setObject:listener forKey:name];
 }
 
-+ (void)dispatch:(SimpleClient *)client event:(EventListener *)event
+- (void)dispatch:(id)client event:(Event *)event
 {
-    
+    for(EventListener * listener in [sharedObject._listeners allKeys])
+    {
+        if(listener.handlers.count != 0)
+            [listener notify:client event:event];
+    }
 }
 
 @end

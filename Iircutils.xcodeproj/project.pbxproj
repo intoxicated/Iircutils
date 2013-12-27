@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		223B32041868B56900A30749 /* EventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32031868B56900A30749 /* EventDispatcher.m */; };
 		223B32071868D3FB00A30749 /* EventElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32061868D3FB00A30749 /* EventElement.m */; };
-		223B320C1868E0C500A30749 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B320B1868E0C500A30749 /* EventObject.m */; };
+		223B320C1868E0C500A30749 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B320B1868E0C500A30749 /* Event.m */; };
 		223B32121868FB9E00A30749 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B320F1868FB9E00A30749 /* GCDAsyncSocket.m */; };
 		223B32131868FB9E00A30749 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32111868FB9E00A30749 /* GCDAsyncUdpSocket.m */; };
 		223B32181868FBA500A30749 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32151868FBA500A30749 /* AsyncSocket.m */; };
@@ -25,8 +25,8 @@
 		226BE963186CD591006B91B3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32151868FBA500A30749 /* AsyncSocket.m */; };
 		226BE964186CD59D006B91B3 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
 		226BE965186CD5AC006B91B3 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
+		2291C167186D18AE006C14E4 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291C166186D18AE006C14E4 /* Channel.m */; };
 		4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
-		4749C73017E51D2300EE09A1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C72F17E51D2300EE09A1 /* Channel.m */; };
 		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
 		4749C73917E51F4900EE09A1 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
 		4749C73D17E5409500EE09A1 /* EventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73C17E5409500EE09A1 /* EventListener.m */; };
@@ -38,7 +38,6 @@
 		474BA96D17E4243F003C42CF /* Iircutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA96C17E4243F003C42CF /* Iircutils.m */; };
 		474BA99817E42717003C42CF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98D17E42717003C42CF /* Connection.m */; };
 		474BA99917E42717003C42CF /* CTCP.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98F17E42717003C42CF /* CTCP.m */; };
-		474BA99A17E42717003C42CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99117E42717003C42CF /* Event.m */; };
 		474BA99B17E42717003C42CF /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99317E42717003C42CF /* Format.m */; };
 		474BA99C17E42717003C42CF /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
 		474BA99D17E42717003C42CF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99717E42717003C42CF /* Response.m */; };
@@ -74,8 +73,8 @@
 		223B32031868B56900A30749 /* EventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDispatcher.m; path = Handlers/EventDispatcher.m; sourceTree = "<group>"; };
 		223B32051868D3FB00A30749 /* EventElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventElement.h; sourceTree = "<group>"; };
 		223B32061868D3FB00A30749 /* EventElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventElement.m; sourceTree = "<group>"; };
-		223B320A1868E0C500A30749 /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
-		223B320B1868E0C500A30749 /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
+		223B320A1868E0C500A30749 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = ../Event.h; sourceTree = "<group>"; };
+		223B320B1868E0C500A30749 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = ../Event.m; sourceTree = "<group>"; };
 		223B320E1868FB9E00A30749 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		223B320F1868FB9E00A30749 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		223B32101868FB9E00A30749 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
@@ -91,9 +90,9 @@
 		223B322E186902DC00A30749 /* Iircutils_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Iircutils_Tests.m; sourceTree = "<group>"; };
 		223B3230186902DC00A30749 /* Iircutils Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iircutils Tests-Prefix.pch"; sourceTree = "<group>"; };
 		223B32361869032C00A30749 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
+		2291C165186D18AE006C14E4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		2291C166186D18AE006C14E4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		4749C72617E5176700EE09A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		4749C72E17E51D2300EE09A1 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
-		4749C72F17E51D2300EE09A1 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
 		4749C73517E51DC600EE09A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4749C73717E51F4900EE09A1 /* IRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRCData.m; path = Models/IRCData.m; sourceTree = "<group>"; };
 		4749C73817E51F4900EE09A1 /* IRCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRCData.h; path = Models/IRCData.h; sourceTree = "<group>"; };
@@ -114,8 +113,6 @@
 		474BA98D17E42717003C42CF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
 		474BA98E17E42717003C42CF /* CTCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCP.h; sourceTree = "<group>"; };
 		474BA98F17E42717003C42CF /* CTCP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCP.m; sourceTree = "<group>"; };
-		474BA99017E42717003C42CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		474BA99117E42717003C42CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		474BA99217E42717003C42CF /* Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Format.h; sourceTree = "<group>"; };
 		474BA99317E42717003C42CF /* Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Format.m; sourceTree = "<group>"; };
 		474BA99417E42717003C42CF /* Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
@@ -196,8 +193,6 @@
 				474BA96C17E4243F003C42CF /* Iircutils.m */,
 				4749C73817E51F4900EE09A1 /* IRCData.h */,
 				4749C73717E51F4900EE09A1 /* IRCData.m */,
-				4749C72E17E51D2300EE09A1 /* Channel.h */,
-				4749C72F17E51D2300EE09A1 /* Channel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,8 +212,6 @@
 				223B32031868B56900A30749 /* EventDispatcher.m */,
 				223B32051868D3FB00A30749 /* EventElement.h */,
 				223B32061868D3FB00A30749 /* EventElement.m */,
-				223B320A1868E0C500A30749 /* EventObject.h */,
-				223B320B1868E0C500A30749 /* EventObject.m */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -260,7 +253,7 @@
 				223B320D1868FB8B00A30749 /* AsyncSocket */,
 				4749C73A17E5407300EE09A1 /* Handlers */,
 				4749C72D17E51D1100EE09A1 /* Models */,
-				474BA99E17E4271E003C42CF /* Interface */,
+				474BA99E17E4271E003C42CF /* Examples */,
 				474BA98B17E42717003C42CF /* Core */,
 				474BA96817E4243F003C42CF /* Supporting Files */,
 			);
@@ -278,23 +271,25 @@
 		474BA98B17E42717003C42CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				223B320A1868E0C500A30749 /* Event.h */,
+				223B320B1868E0C500A30749 /* Event.m */,
 				474BA98C17E42717003C42CF /* Connection.h */,
 				474BA98D17E42717003C42CF /* Connection.m */,
 				474BA98E17E42717003C42CF /* CTCP.h */,
 				474BA98F17E42717003C42CF /* CTCP.m */,
-				474BA99017E42717003C42CF /* Event.h */,
-				474BA99117E42717003C42CF /* Event.m */,
 				474BA99217E42717003C42CF /* Format.h */,
 				474BA99317E42717003C42CF /* Format.m */,
 				474BA99417E42717003C42CF /* Protocol.h */,
 				474BA99517E42717003C42CF /* Protocol.m */,
 				474BA99617E42717003C42CF /* Response.h */,
 				474BA99717E42717003C42CF /* Response.m */,
+				2291C165186D18AE006C14E4 /* Channel.h */,
+				2291C166186D18AE006C14E4 /* Channel.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		474BA99E17E4271E003C42CF /* Interface */ = {
+		474BA99E17E4271E003C42CF /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				474BA99F17E4271E003C42CF /* SimpleBot.h */,
@@ -302,6 +297,7 @@
 				474BA9A117E4271E003C42CF /* SimpleClient.h */,
 				474BA9A217E4271E003C42CF /* SimpleClient.m */,
 			);
+			name = Examples;
 			path = Interface;
 			sourceTree = "<group>";
 		};
@@ -408,16 +404,15 @@
 				223B32071868D3FB00A30749 /* EventElement.m in Sources */,
 				474BA99817E42717003C42CF /* Connection.m in Sources */,
 				474BA99917E42717003C42CF /* CTCP.m in Sources */,
-				474BA99A17E42717003C42CF /* Event.m in Sources */,
 				474BA99B17E42717003C42CF /* Format.m in Sources */,
 				223B32181868FBA500A30749 /* AsyncSocket.m in Sources */,
 				474BA99C17E42717003C42CF /* Protocol.m in Sources */,
 				474BA99D17E42717003C42CF /* Response.m in Sources */,
 				474BA9A317E4271E003C42CF /* SimpleBot.m in Sources */,
-				223B320C1868E0C500A30749 /* EventObject.m in Sources */,
+				223B320C1868E0C500A30749 /* Event.m in Sources */,
 				223B32041868B56900A30749 /* EventDispatcher.m in Sources */,
 				474BA9A417E4271E003C42CF /* SimpleClient.m in Sources */,
-				4749C73017E51D2300EE09A1 /* Channel.m in Sources */,
+				2291C167186D18AE006C14E4 /* Channel.m in Sources */,
 				4749C73917E51F4900EE09A1 /* IRCData.m in Sources */,
 				4749C73D17E5409500EE09A1 /* EventListener.m in Sources */,
 				4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */,

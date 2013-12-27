@@ -7,7 +7,7 @@
 //
 
 #import "MessageListener.h"
-#import "EventObject.h"
+#import "Event.h"
 #import "Protocol.h"
 
 @implementation MessageListener

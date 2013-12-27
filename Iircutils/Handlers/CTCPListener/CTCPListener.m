@@ -7,7 +7,7 @@
 //
 
 #import "CTCPListener.h"
-#import "EventObject.h"
+#import "Event.h"
 
 @implementation CTCPListener
 -(void)notify:(SimpleClient *)client event:(Event *)event

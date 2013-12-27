@@ -6,10 +6,7 @@
 //  Copyright (c) 2013 Realfree. All rights reserved.
 //
 
-#import "EventObject.h"
-
-@implementation EventObject
-@end
+#import "Event.h"
 
 @implementation Event
 @end

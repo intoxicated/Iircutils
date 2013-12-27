@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SimpleClient;
+@class Event;
 @class EventListener;
 
 @interface EventDispatcher : NSObject
@@ -19,16 +19,16 @@
 
 @property (nonatomic, strong) NSMutableDictionary * _listeners;
 
-- (id)init;
 + (EventDispatcher *)sharedDispatcher;
 
-//singleton methods
 
-+ (void)register_listener:(NSString *)name listener:(id)listener;
-+ (void)dispatch:(SimpleClient *)client event:()event;
+- (id)init;
 
-+ (void)setListener:(NSString *)name listener:(EventListener *)listener;
-+ (id)getListener:(NSString *)name;
-+ (NSArray *)allKeys;
+- (void)register_listener:(NSString *)name listener:(id)listener;
+- (void)dispatch:(id)client event:(Event *)event;
+
+- (void)setListener:(NSString *)name listener:(Event *)listener;
+- (EventListener *)getListener:(NSString *)name;
+- (NSArray *)allKeys;
 
 @end

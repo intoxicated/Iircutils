@@ -13,7 +13,9 @@
 @interface Event : NSObject
 @property (strong, nonatomic) NSString * command;
 @property (strong, nonatomic) NSString * prefix;
-@property (strong, nonatomic) NSArray * params;
+@property (strong, nonatomic) NSMutableArray * params;
+-(id)init:(IRCData *)data;
+-(id)initWith:(NSString *)command prefix:(NSString *)prefix params:(NSArray *)params;
 @end
 
 @interface StandardEvent : Event
@@ -21,15 +23,12 @@
 @property (strong, nonatomic) NSString * host;
 @property (strong, nonatomic) NSString * user;
 @property (strong, nonatomic) NSString * target;
--(id)init:(IRCData *)data;
+
 @end
 
 @interface MessageEvent : StandardEvent
-
+@property (strong, nonatomic) NSString * message;
 @end
 
 @interface CTCPEvent : StandardEvent
-@end
-
-@interface EventObject : NSObject
 @end

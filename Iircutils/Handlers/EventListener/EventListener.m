@@ -8,7 +8,7 @@
 
 #import "EventListener.h"
 #import "EventElement.h"
-#import "EventObject.h"
+#import "Event.h"
 #import "Protocol.h"
 #import "IRCData.h"
 
@@ -78,7 +78,7 @@
 }
 
 /* */
-- (void)notify:(SimpleClient *)client event:(Event *)event
+- (void)notify:(id)client event:(Event *)event
 {
     [NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
 }

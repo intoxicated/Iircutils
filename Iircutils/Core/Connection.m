@@ -60,12 +60,13 @@
 -(void)execute:(NSString *)command param:(NSArray *)params kwargs:(NSString *)args
 {
     NSMutableArray * rawArgs = [[NSMutableArray alloc] initWithArray:params];
-    NSString * raw;
+    NSMutableString * raw = [[NSMutableString alloc] init];
     if(args != nil)
     {
         [rawArgs addObject:[[args componentsSeparatedByString:@"tailing"] objectAtIndex:1]];
-        raw = [rawArgs componentsJoinedByString:@" "];
     }
+    
+    [raw appendFormat:@"%@ %@\r\n", [command uppercaseString],[rawArgs componentsJoinedByString:@" "]];
     
     NSData *data = [raw dataUsingEncoding:NSUTF8StringEncoding];
 
@@ -83,7 +84,8 @@
     
 }
 
-#pragma mark - async socket
+#pragma mark - async socket delegate
+
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
 	//if(tag == ECHO_MSG)
@@ -116,57 +118,6 @@
 	
     //now waiting for server respond
     [sock readDataToData:self.terminator withTimeout:-1 tag:0];
-}
-
-- (NSTimeInterval)onSocket:(AsyncSocket *)sock
-  shouldTimeoutReadWithTag:(long)tag
-				   elapsed:(NSTimeInterval)elapsed
-				 bytesDone:(NSUInteger)length
-{
-/*	if(elapsed <= READ_TIMEOUT)
-	{
-		NSString *warningMsg = @"Are you still there?\r\n";
-		NSData *warningData = [warningMsg dataUsingEncoding:NSUTF8StringEncoding];
-		
-		[sock writeData:warningData withTimeout:-1 tag:WARNING_MSG];
-		
-		return READ_TIMEOUT_EXTENSION;
-	}
-	*/
-	return 0.0;
-}
-
-- (void)logError:(NSString *)msg
-{
-	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
-	
-	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
-	[attributes setObject:[UIColor redColor] forKey:NSForegroundColorAttributeName];
-	
-	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
-    NSLog(@"error: %@", msg);
-}
-
-- (void)logInfo:(NSString *)msg
-{
-	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
-	
-	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
-	[attributes setObject:[UIColor purpleColor] forKey:NSForegroundColorAttributeName];
-	
-	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
-    NSLog(@"info: %@", msg);
-}
-
-- (void)logMessage:(NSString *)msg
-{
-	NSString *paragraph = [NSString stringWithFormat:@"%@\n", msg];
-	
-	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithCapacity:1];
-	[attributes setObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
-	
-	NSAttributedString *as = [[NSAttributedString alloc] initWithString:paragraph attributes:attributes];
-    NSLog(@"message: %@", msg);
 }
 
 @end
