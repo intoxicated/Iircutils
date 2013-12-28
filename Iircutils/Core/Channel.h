@@ -10,4 +10,7 @@
 
 @interface Channel : NSObject
 
+@property (nonatomic, strong) NSMutableArray * user_list;
+@property (nonatomic, strong) NSString * name;
+
 @end

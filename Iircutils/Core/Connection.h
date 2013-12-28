@@ -14,14 +14,10 @@
 
 @class AsyncSocket;
 
-@protocol IRCConnectionDelegate <NSObject>
-
-@end
-
 @interface Connection : NSObject
 @property (assign, nonatomic) BOOL auto_ping_respond;
 @property (strong, nonatomic) NSData * terminator;
-@property (strong, nonatomic) NSOutputStream *incomingData;
+@property (strong, nonatomic) NSMutableArray * socketList;
 @property (strong, nonatomic) AsyncSocket * asyncSock;
 
 @property (nonatomic, strong) NSString * _hostname;

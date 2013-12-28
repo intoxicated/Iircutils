@@ -23,7 +23,6 @@
 @property (strong, nonatomic) NSString * host;
 @property (strong, nonatomic) NSString * user;
 @property (strong, nonatomic) NSString * target;
-
 @end
 
 @interface MessageEvent : StandardEvent

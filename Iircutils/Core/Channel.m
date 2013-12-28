@@ -9,5 +9,6 @@
 #import "Channel.h"
 
 @implementation Channel
-
+@synthesize user_list = _user_list;
+@synthesize name;
 @end

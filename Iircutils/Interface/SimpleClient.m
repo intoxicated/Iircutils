@@ -12,18 +12,27 @@
 #import "Event.h"
 #import "CTCP.h"
 #import "Format.h"
+#import "Connection.h"
+
+@interface SimpleClient ()
+@property (nonatomic, strong) Connection * conn;
+
+-(void)_update_client_info;
+-(void)_set_channel_name;
+@end
 
 @implementation SimpleClient
 @synthesize events = _events;
 @synthesize user = _user;
 @synthesize real_name = _real_name;
 @synthesize nick = _nick;
+@synthesize conn = _conn;
 
 - (id)init:(NSString *)nick mode:(NSString *)mode
 {
     if(self = [super init])
     {
-        
+        self.events = [[EventDispatcher alloc] init];
     }
     return self;
 }
@@ -99,7 +108,8 @@
 
 - (void)connect:(NSString *)host port:(NSInteger)port channel:(NSString *)chl password:(NSString *)pw
 {
-    
+    //using connection class
+    //
 }
 
 #pragma mark - built in handlers

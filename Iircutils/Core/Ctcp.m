@@ -11,6 +11,10 @@
 
 @end
 
+//CTCP related
+#define X_DELIM @"\x01"
+#define M_QUOTE @"\x10"
+#define X_QUOTE @"\\"
 
 @implementation CTCP
 

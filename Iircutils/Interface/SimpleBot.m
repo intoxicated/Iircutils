@@ -8,6 +8,10 @@
 
 #import "SimpleBot.h"
 
+@interface SimpleBot ()
+
+@end
+
 @implementation SimpleBot
 
 @end

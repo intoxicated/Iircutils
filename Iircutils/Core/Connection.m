@@ -12,30 +12,29 @@
 #import "AsyncSocket.h"
 #import "GCDAsyncSocket.h"
 
-@interface Connection (PrivateAPI)
-- (void)logError:(NSString *)msg;
-- (void)logInfo:(NSString *)msg;
-- (void)logMessage:(NSString *)msg;
+@interface Connection ()
+
 @end
 
 @implementation Connection
 @synthesize auto_ping_respond = _auto_ping_respond;
 @synthesize terminator = _terminator;
-@synthesize incomingData = _incomingData;
+@synthesize socketList = _socketList;
 @synthesize asyncSock = _asyncSock;
 @synthesize _hostname, _port;
 
 -(id)init:(BOOL)isIPv6 delegate:(id)del{
     //async connection to IRC server
-    self.auto_ping_respond = YES;
-    self.terminator = [AsyncSocket CRLFData];
-    
     if (self = [super init])
     {
         if(del != nil)
             self.asyncSock = [[AsyncSocket alloc] initWithDelegate:del];
         else
             self.asyncSock = [[AsyncSocket alloc] initWithDelegate:self];
+        
+        self.socketList = [[NSMutableArray alloc] init];
+        self.auto_ping_respond = YES;
+        self.terminator = [AsyncSocket CRLFData];
     }
     return self;
 }
@@ -100,21 +99,23 @@
 	NSString *msg = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
 	if(msg)
 	{
-		[self logMessage:msg];
+		NSLog(@"Message has been read: %@\n", msg);
 	}
 	else
 	{
-		[self logError:@"Error converting received data into UTF-8 String"];
+		NSLog(@"Error converting received data into UTF-8 String");
 	}
 	
-	// Even if we were unable to write the incoming data to the log,
-	// we're still going to echo it back to the client.
-	//[sock writeData:data withTimeout:-1 tag:ECHO_MSG];
+    
+    //after read has done make a decision what to do
+    
+    //normal msg print it out to output
+    //other actions may be ignored
 }
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
-	NSLog(@"didConnect! %@:%hu", host, port);
+	NSLog(@"Connect to the server - %@:%hu", host, port);
 	
     //now waiting for server respond
     [sock readDataToData:self.terminator withTimeout:-1 tag:0];

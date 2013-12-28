@@ -18,8 +18,6 @@ static dispatch_once_t onceToken;
 
 @implementation Format
 
-
-
 + (Format*)sharedManager {
     dispatch_once(&onceToken, ^{
         sharedObject = [[self alloc] init];

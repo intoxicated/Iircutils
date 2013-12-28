@@ -20,7 +20,6 @@
 
 //+ (EventDispatcher *)sharedDispatcher;
 
-
 - (id)init;
 
 - (void)register_listener:(NSString *)name listener:(id)listener;

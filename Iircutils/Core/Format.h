@@ -42,11 +42,6 @@
 #define FILTER_REVERSED 8
 #define FILTER_COLOR 16
 
-//CTCP related
-#define X_DELIM @"\x01"
-#define M_QUOTE @"\x10"
-#define X_QUOTE @"\\"
-
 + (Format *)sharedManager;
 
 + (NSString *)filter:(NSString *)text type:(NSInteger)type;

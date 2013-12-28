@@ -21,6 +21,7 @@
 		223B322D186902DC00A30749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223B322B186902DC00A30749 /* InfoPlist.strings */; };
 		223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B322E186902DC00A30749 /* Iircutils_Tests.m */; };
 		223B32371869032C00A30749 /* ConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32361869032C00A30749 /* ConnectionTest.m */; };
+		2263831A186F74C200400F2D /* SimpleClientTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22638319186F74C200400F2D /* SimpleClientTest.m */; };
 		226BE962186CD551006B91B3 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA98D17E42717003C42CF /* Connection.m */; };
 		226BE963186CD591006B91B3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B32151868FBA500A30749 /* AsyncSocket.m */; };
 		226BE964186CD59D006B91B3 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
@@ -90,6 +91,7 @@
 		223B322E186902DC00A30749 /* Iircutils_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Iircutils_Tests.m; sourceTree = "<group>"; };
 		223B3230186902DC00A30749 /* Iircutils Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iircutils Tests-Prefix.pch"; sourceTree = "<group>"; };
 		223B32361869032C00A30749 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
+		22638319186F74C200400F2D /* SimpleClientTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleClientTest.m; sourceTree = "<group>"; };
 		2291C165186D18AE006C14E4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
 		2291C166186D18AE006C14E4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		4749C72617E5176700EE09A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 			children = (
 				223B32361869032C00A30749 /* ConnectionTest.m */,
 				223B322E186902DC00A30749 /* Iircutils_Tests.m */,
+				22638319186F74C200400F2D /* SimpleClientTest.m */,
 				223B3229186902DC00A30749 /* Supporting Files */,
 			);
 			path = "Iircutils Tests";
@@ -393,6 +396,7 @@
 				226BE962186CD551006B91B3 /* Connection.m in Sources */,
 				223B322F186902DC00A30749 /* Iircutils_Tests.m in Sources */,
 				223B32371869032C00A30749 /* ConnectionTest.m in Sources */,
+				2263831A186F74C200400F2D /* SimpleClientTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
