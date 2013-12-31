@@ -19,9 +19,9 @@
 @implementation Connection
 @synthesize auto_ping_respond = _auto_ping_respond;
 @synthesize terminator = _terminator;
-@synthesize socketList = _socketList;
 @synthesize asyncSock = _asyncSock;
 @synthesize _hostname, _port;
+@synthesize handleLinePtr = _handleLinePtr;
 
 -(id)init:(BOOL)isIPv6 delegate:(id)del{
     //async connection to IRC server
@@ -31,8 +31,7 @@
             self.asyncSock = [[AsyncSocket alloc] initWithDelegate:del];
         else
             self.asyncSock = [[AsyncSocket alloc] initWithDelegate:self];
-        
-        self.socketList = [[NSMutableArray alloc] init];
+
         self.auto_ping_respond = YES;
         self.terminator = [AsyncSocket CRLFData];
     }
@@ -46,7 +45,8 @@
     
     //use ssl?
     NSError * err;
-    [self.asyncSock connectToHost:_hostname onPort:port error:&err];
+    [self.asyncSock connectToHost:_hostname onPort:_port error:&err];
+    
     if(![pw isEqualToString:@""])
         [self execute:@"PASS" param:[NSArray arrayWithObjects:pw, nil] kwargs:nil];
 }
@@ -111,6 +111,8 @@
     
     //normal msg print it out to output
     //other actions may be ignored
+    //[self handle_line:<#(IRCData *)#>]
+    //[self performSelector:self.handleLinePtr.pointerValue withObject:IRCData*];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port

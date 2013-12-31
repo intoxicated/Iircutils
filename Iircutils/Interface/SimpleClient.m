@@ -13,12 +13,17 @@
 #import "CTCP.h"
 #import "Format.h"
 #import "Connection.h"
+#import "IRCData.h"
+#import "Channel.h"
 
 @interface SimpleClient ()
 @property (nonatomic, strong) Connection * conn;
 
 -(void)_update_client_info;
 -(void)_set_channel_name;
+-(void)_auto_join:(SimpleClient *)client;
+
+
 @end
 
 @implementation SimpleClient
@@ -33,6 +38,7 @@
     if(self = [super init])
     {
         self.events = [[EventDispatcher alloc] init];
+        self.channels = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -59,8 +65,12 @@
     [e add_handler:[NSValue valueWithPointer:@selector(_update_client_info)] priority:0];
 }
 
-- (void)_dispatch_event:(NSString *)prefix command:(NSString *)command params:(NSArray *)params
+- (void)_dispatch_event:(IRCData *)data
 {
+    NSString * command = data.command;
+    NSString * prefix = data.prefix;
+    NSArray * params = [NSArray arrayWithArray:data.params];
+    
     NSMutableArray * pending = [[NSMutableArray alloc] init];
     NSArray * ctcp_request;
     NSString * msgData;
@@ -110,9 +120,49 @@
 {
     //using connection class
     //
+    NSArray * params = [NSArray arrayWithObjects:self.user,self.mode,@"*", nil];
+    self.conn = [[Connection alloc] init:NO delegate:nil];
+    self.conn.handleLinePtr = [NSValue valueWithPointer:@selector(_dispatch_event:)];
+    [self.conn connect:host port:port password:pw];
+    [self.conn execute:@"USER" param:params kwargs:[NSString stringWithFormat:@"trailing=%@", self.real_name]];
+    [self.conn execute:@"NICK" param:[NSArray arrayWithObject:self.nick] kwargs:nil];
+    
+    if (chl != nil)
+    {
+        Channel *ch = [[Channel alloc] init];
+        [ch setName:chl];
+        
+        [self.channels addObject:ch];
+        
+        /*
+        void (^auto_join)(SimpleClient *, EventListener *) = ^(SimpleClient * client, EventListener * e)
+        {
+            for(Channel * c in self.channels)
+            {
+                [client join_channel:c.name key:nil];
+            }
+        };
+        */
+        
+        EventListener * e = [self.events getListener:@"welcome"];
+        [e add_handler:[NSValue valueWithPointer:@selector(_auto_join)] priority:0];
+    }
+}
+
+-(void)execute:(IRCData *)data
+{
+    //[self.conn execute:data.command param:data. kwargs:data.]
 }
 
 #pragma mark - built in handlers
+
+- (void)_auto_join:(SimpleClient *)client
+{
+    for(Channel * c in self.channels)
+    {
+        [client join_channel:c.name key:nil];
+    }
+}
 
 - (void)_update_client_info
 {

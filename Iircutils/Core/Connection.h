@@ -17,11 +17,12 @@
 @interface Connection : NSObject
 @property (assign, nonatomic) BOOL auto_ping_respond;
 @property (strong, nonatomic) NSData * terminator;
-@property (strong, nonatomic) NSMutableArray * socketList;
 @property (strong, nonatomic) AsyncSocket * asyncSock;
 
 @property (nonatomic, strong) NSString * _hostname;
 @property (nonatomic, assign) NSInteger _port;
+
+@property (nonatomic, strong) NSValue * handleLinePtr;
 
 -(id)init:(BOOL)isIPv6 delegate:(id)del;
 -(void)connect:(NSString *)hostname port:(NSInteger)port password:(NSString *)pw;
