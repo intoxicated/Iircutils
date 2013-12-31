@@ -19,7 +19,6 @@
 @property (nonatomic, strong) NSString * mode;
 @property (nonatomic, strong) NSMutableArray * channels;
 
-
 @property (nonatomic, strong) EventDispatcher * events;
 
 -(void)join_channel:(NSString *)ch key:(NSString *)key;

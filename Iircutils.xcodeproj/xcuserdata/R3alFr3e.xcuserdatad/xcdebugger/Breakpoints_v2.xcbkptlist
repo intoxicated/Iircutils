@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "-onSocket:didConnectToHost:port:"
+            landmarkName = "-onSocket:didReadData:withTag:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
