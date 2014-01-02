@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSMutableArray * user_list;
 @property (nonatomic, strong) NSString * name;
 
+- (id)init;
 @end

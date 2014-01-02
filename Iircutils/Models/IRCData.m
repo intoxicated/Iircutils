@@ -14,7 +14,7 @@
 @synthesize prefix = _prefix;
 @synthesize params = _params;
 
-- (IRCData *)init
+- (IRCData *)initWithData:(NSString *)data
 {
     if(self = [super init])
     {

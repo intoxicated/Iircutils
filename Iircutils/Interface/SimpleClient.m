@@ -7,8 +7,12 @@
 //
 
 #import "SimpleClient.h"
+
 #import "EventDispatcher.h"
 #import "EventListener.h"
+#import "MessageListener.h"
+#import "ReplyListener.h"
+
 #import "Event.h"
 #import "CTCP.h"
 #import "Format.h"
@@ -16,11 +20,13 @@
 #import "IRCData.h"
 #import "Channel.h"
 
+#define TRAILING(x) [NSString stringWithFormat:@"trailing=%@", x]
+
 @interface SimpleClient ()
 @property (nonatomic, strong) Connection * conn;
 
 -(void)_update_client_info;
--(void)_set_channel_name;
+-(void)_set_channel_name:(SimpleClient *)client channelObj:(Channel *)ch;
 -(void)_auto_join:(SimpleClient *)client;
 
 
@@ -38,7 +44,9 @@
     if(self = [super init])
     {
         self.events = [[EventDispatcher alloc] init];
-        self.channels = [[NSMutableArray alloc] init];
+        self.channels = [[NSMutableDictionary alloc] init];
+        self.conn = [[Connection alloc] init:NO delegate:nil];
+        self.conn.delegate = self;
     }
     return self;
 }
@@ -66,6 +74,61 @@
 }
 
 - (void)_dispatch_event:(IRCData *)data
+{
+
+}
+
+- (void)connect:(NSString *)host port:(NSInteger)port channel:(NSString *)chl password:(NSString *)pw
+{
+    //using connection class
+    //
+    NSArray * params = [NSArray arrayWithObjects:self.user,self.mode,@"*", nil];
+    
+    //self.conn.handleLinePtr = [NSValue valueWithPointer:@selector(_dispatch_event:)];
+    [self.conn connect:host port:port password:pw];
+    [self.conn execute:@"USER" param:params kwargs:TRAILING(self.real_name)];
+    [self.conn execute:@"NICK" param:[NSArray arrayWithObject:self.nick] kwargs:nil];
+    
+    if (chl != nil)
+    {
+        Channel *ch = [[Channel alloc] init];
+        [ch setName:chl];
+        
+        [self.channels setObject:ch forKey:chl];
+        
+        /*
+        void (^auto_join)(SimpleClient *, EventListener *) = ^(SimpleClient * client, EventListener * e)
+        {
+            for(Channel * c in self.channels)
+            {
+                [client join_channel:c.name key:nil];
+            }
+        };
+        */
+        
+        EventListener * e = [self.events getListener:@"welcome"];
+        [e add_handler:[NSValue valueWithPointer:@selector(_auto_join)] priority:0];
+    }
+}
+
+-(void)register_listener:(NSString *)name listener:(EventListener *)lst
+{
+    
+}
+
+-(void)start
+{
+    
+}
+
+-(void)execute:(IRCData *)data
+{
+    //[self.conn execute:data.command param:data. kwargs:data.]
+}
+
+#pragma mark - ConnectionDelegate
+
+-(void)handle_lines:(IRCData *)data
 {
     NSString * command = data.command;
     NSString * prefix = data.prefix;
@@ -114,44 +177,7 @@
     {
         [self.events dispatch:self event:event];
     }
-}
 
-- (void)connect:(NSString *)host port:(NSInteger)port channel:(NSString *)chl password:(NSString *)pw
-{
-    //using connection class
-    //
-    NSArray * params = [NSArray arrayWithObjects:self.user,self.mode,@"*", nil];
-    self.conn = [[Connection alloc] init:NO delegate:nil];
-    self.conn.handleLinePtr = [NSValue valueWithPointer:@selector(_dispatch_event:)];
-    [self.conn connect:host port:port password:pw];
-    [self.conn execute:@"USER" param:params kwargs:[NSString stringWithFormat:@"trailing=%@", self.real_name]];
-    [self.conn execute:@"NICK" param:[NSArray arrayWithObject:self.nick] kwargs:nil];
-    
-    if (chl != nil)
-    {
-        Channel *ch = [[Channel alloc] init];
-        [ch setName:chl];
-        
-        [self.channels addObject:ch];
-        
-        /*
-        void (^auto_join)(SimpleClient *, EventListener *) = ^(SimpleClient * client, EventListener * e)
-        {
-            for(Channel * c in self.channels)
-            {
-                [client join_channel:c.name key:nil];
-            }
-        };
-        */
-        
-        EventListener * e = [self.events getListener:@"welcome"];
-        [e add_handler:[NSValue valueWithPointer:@selector(_auto_join)] priority:0];
-    }
-}
-
--(void)execute:(IRCData *)data
-{
-    //[self.conn execute:data.command param:data. kwargs:data.]
 }
 
 #pragma mark - built in handlers
@@ -169,60 +195,119 @@
     
 }
 
-- (void)_set_channel_name
+- (void)_set_channel_name:(SimpleClient *)client channelObj:(NameReplyListener *)nrl
 {
-    
+    Channel * channel = [client.channels objectForKey:nrl.nameEvent.channel_name];
+    channel.name = nrl.nameEvent.channel_name;
+    [channel.user_list addObjectsFromArray:nrl.nameEvent.name_list];
+}
+
+- (void)_remove_channel_user:(SimpleClient *)client event:(StandardEvent *)event
+{
+    NSString * ch = event.target;
+    Channel * c = [client.channels objectForKey:ch];
+    if([event.source isEqualToString:client.nick])
+    {
+        [client.channels removeObjectForKey:ch];
+    }
+    else if([c.user_list containsObject:event.source])
+    {
+        [c.user_list removeObject:event.source];
+    }
+}
+
+- (void)_add_channel_user:(SimpleClient *)client event:(StandardEvent *)event
+{
+    NSString * ch = event.target;
+    [[(Channel *)[client.channels objectForKey:ch] user_list] addObject:event.source];
 }
 
 #pragma mark - built in features
 
 -(void)join_channel:(NSString *)ch key:(NSString *)key
 {
-    
+    if([ch isEqualToString:@"0"])
+    {
+        self.channels = [[NSMutableDictionary alloc] init]; //empty dic
+        [self.conn execute:@"JOIN" param:@[@"0"] kwargs:nil];
+    }
+    else
+    {
+        NSArray * params;
+        if(key != nil)
+            params = @[ch, key];
+        else
+            params = @[ch];
+        
+        [self.conn execute:@"JOIN" param:params kwargs:nil];
+    }
 }
 
--(void)part_channel:(NSString *)ch
+-(void)part_channel:(NSString *)ch msg:(NSString *)msg
 {
-    
+    [self.conn execute:@"PART"
+                 param:@[ch]
+                kwargs:[NSString stringWithFormat:@"trailing=%@",msg]];
 }
 
 -(void)identify:(NSString *)nspwd
 {
-    
+    [self send_message:@"NickServ" msg:[NSString stringWithFormat:@"IDENTIFY %@",nspwd] isService:YES];
 }
 
 -(void)send_message:(NSString *)target msg:(NSString *)msg isService:(BOOL)isService
 {
-    
+    NSString * message = [CTCP low_level_qoute:msg];
+    if(isService)
+        [self.conn execute:@"SQUERY" param:@[target] kwargs:message];
+    else
+        [self.conn execute:@"PRIVMSG" param:@[target] kwargs:TRAILING(message)];
 }
 
 -(void)send_notice:(NSString *)target msg:(NSString *)msg
 {
-    
+    NSString * message = [CTCP low_level_qoute:msg];
+    [self.conn execute:@"NOTICE" param:@[target] kwargs:TRAILING(message)];
 }
 
 -(void)send_ctcp:(NSString *)target cmd:(NSString *)cmd params:(NSArray *)params
 {
-    
+    NSMutableArray * p = [[NSMutableArray alloc] initWithArray:params];
+    if (params != nil && params.count > 0) {
+        [p insertObject:cmd atIndex:0];
+        NSString * param_tag = [CTCP tag:[params componentsJoinedByString:@" "]];
+        [self send_message:target msg:param_tag isService:NO];
+    }
+    else
+        [self send_message:target msg:[CTCP tag:cmd] isService:NO];
 }
 
 -(void)send_ctcp_reply:(NSString *)target cmd:(NSString *)cmd params:(NSArray *)params
 {
-    
+    NSMutableArray * p = [[NSMutableArray alloc] initWithArray:params];
+    if (params != nil && params.count > 0) {
+        [p insertObject:cmd atIndex:0];
+        NSString * param_tag = [CTCP tag:[params componentsJoinedByString:@" "]];
+        [self send_message:target msg:param_tag isService:NO];
+    }
+    else
+        [self send_message:target msg:[CTCP tag:cmd] isService:NO];
 }
 
 -(void)send_action:(NSString *)target action:(NSString *)action
 {
-    
+    [self send_ctcp:target cmd:@"ACTION" params:@[action]];
 }
 
 -(void)set_nickname:(NSString *)nickname
 {
-    
+    [self.conn execute:@"NICK" param:@[nickname] kwargs:nil];
 }
 
 -(void)disconnect:(NSString *)msg
 {
-    
+    [self.conn execute:@"QUIT" param:nil kwargs:TRAILING(msg)];
+    self.channels = nil;
+    [self.conn disconnect];
 }
 @end

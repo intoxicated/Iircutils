@@ -13,16 +13,27 @@
 #import "Response.h"
 
 @class AsyncSocket;
+@class IRCData;
+
+@protocol ConnectionDelegate <NSObject>
+@required
+-(void)handle_lines:(IRCData *)data;
+@end
 
 @interface Connection : NSObject
+{
+    id <ConnectionDelegate> delegate;
+}
+
 @property (assign, nonatomic) BOOL auto_ping_respond;
 @property (strong, nonatomic) NSData * terminator;
 @property (strong, nonatomic) AsyncSocket * asyncSock;
 
 @property (nonatomic, strong) NSString * _hostname;
 @property (nonatomic, assign) NSInteger _port;
-
 @property (nonatomic, strong) NSValue * handleLinePtr;
+
+@property (nonatomic, strong) id delegate;
 
 -(id)init:(BOOL)isIPv6 delegate:(id)del;
 -(void)connect:(NSString *)hostname port:(NSInteger)port password:(NSString *)pw;

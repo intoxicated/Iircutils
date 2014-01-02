@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSString * prefix;
 @property (strong, nonatomic) NSString * command;
 @property (strong, nonatomic) NSArray * params;
+
+- (id)initWithData:(NSString *)data;
 @end

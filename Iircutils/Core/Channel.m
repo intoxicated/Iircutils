@@ -10,5 +10,16 @@
 
 @implementation Channel
 @synthesize user_list = _user_list;
-@synthesize name;
+@synthesize name = _name;
+
+-(id)init
+{
+    if(self = [super init])
+    {
+        self.name = nil;
+        self.user_list = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 @end

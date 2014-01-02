@@ -52,7 +52,7 @@
     return [self._listeners allKeys];
 }
 
-- (void)register_listener:(NSString *)name listener:(id)listener
+- (void)register_listener:(NSString *)name listener:(EventListener *)listener
 {
     [self._listeners setObject:listener forKey:name];
 }

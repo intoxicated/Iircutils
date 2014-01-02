@@ -11,6 +11,7 @@
 #import "Connection.h"
 #import "AsyncSocket.h"
 #import "GCDAsyncSocket.h"
+#import "IRCData.h"
 
 @interface Connection ()
 
@@ -22,6 +23,7 @@
 @synthesize asyncSock = _asyncSock;
 @synthesize _hostname, _port;
 @synthesize handleLinePtr = _handleLinePtr;
+@synthesize delegate;
 
 -(id)init:(BOOL)isIPv6 delegate:(id)del{
     //async connection to IRC server
@@ -53,7 +55,8 @@
 
 -(void)handle_line:(IRCData *)data
 {
-    [NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
+    [[self delegate] handle_lines:data];
+    //[NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
 }
 
 -(void)execute:(NSString *)command param:(NSArray *)params kwargs:(NSString *)args
@@ -106,12 +109,14 @@
 		NSLog(@"Error converting received data into UTF-8 String");
 	}
 	
+    IRCData * line_data = [Protocol parse_line:msg];
     
     //after read has done make a decision what to do
     
     //normal msg print it out to output
     //other actions may be ignored
     //[self handle_line:<#(IRCData *)#>]
+    [[self delegate] handle_lines:line_data];
     //[self performSelector:self.handleLinePtr.pointerValue withObject:IRCData*];
 }
 

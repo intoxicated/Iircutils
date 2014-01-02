@@ -22,7 +22,7 @@
 
 - (id)init;
 
-- (void)register_listener:(NSString *)name listener:(id)listener;
+- (void)register_listener:(NSString *)name listener:(EventListener *)listener;
 - (void)dispatch:(id)client event:(Event *)event;
 
 - (void)setListener:(NSString *)name listener:(Event *)listener;
