@@ -27,6 +27,7 @@
 		226BE964186CD59D006B91B3 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA99517E42717003C42CF /* Protocol.m */; };
 		226BE965186CD5AC006B91B3 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
 		2291C167186D18AE006C14E4 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291C166186D18AE006C14E4 /* Channel.m */; };
+		22B59F3718779A9F00AE6479 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B59F3618779A9F00AE6479 /* NSString+Utils.m */; };
 		4749C72717E5176700EE09A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C72617E5176700EE09A1 /* CFNetwork.framework */; };
 		4749C73617E51DC600EE09A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749C73517E51DC600EE09A1 /* SenTestingKit.framework */; };
 		4749C73917E51F4900EE09A1 /* IRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4749C73717E51F4900EE09A1 /* IRCData.m */; };
@@ -94,6 +95,8 @@
 		22638319186F74C200400F2D /* SimpleClientTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleClientTest.m; sourceTree = "<group>"; };
 		2291C165186D18AE006C14E4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
 		2291C166186D18AE006C14E4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		22B59F3518779A9F00AE6479 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Utils.h"; path = "Categories/NSString+Utils.h"; sourceTree = "<group>"; };
+		22B59F3618779A9F00AE6479 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Utils.m"; path = "Categories/NSString+Utils.m"; sourceTree = "<group>"; };
 		4749C72617E5176700EE09A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4749C73517E51DC600EE09A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4749C73717E51F4900EE09A1 /* IRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRCData.m; path = Models/IRCData.m; sourceTree = "<group>"; };
@@ -189,6 +192,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22B59F3418779A7300AE6479 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				22B59F3518779A9F00AE6479 /* NSString+Utils.h */,
+				22B59F3618779A9F00AE6479 /* NSString+Utils.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		4749C72D17E51D1100EE09A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +265,7 @@
 		474BA96717E4243F003C42CF /* Iircutils */ = {
 			isa = PBXGroup;
 			children = (
+				22B59F3418779A7300AE6479 /* Categories */,
 				223B320D1868FB8B00A30749 /* AsyncSocket */,
 				4749C73A17E5407300EE09A1 /* Handlers */,
 				4749C72D17E51D1100EE09A1 /* Models */,
@@ -419,6 +432,7 @@
 				2291C167186D18AE006C14E4 /* Channel.m in Sources */,
 				4749C73917E51F4900EE09A1 /* IRCData.m in Sources */,
 				4749C73D17E5409500EE09A1 /* EventListener.m in Sources */,
+				22B59F3718779A9F00AE6479 /* NSString+Utils.m in Sources */,
 				4749C74017E540CE00EE09A1 /* MessageListener.m in Sources */,
 				223B32131868FB9E00A30749 /* GCDAsyncUdpSocket.m in Sources */,
 				4749C74617E5414400EE09A1 /* CTCPListener.m in Sources */,

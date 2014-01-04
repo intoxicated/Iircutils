@@ -56,7 +56,6 @@
 -(void)handle_line:(IRCData *)data
 {
     [[self delegate] handle_lines:data];
-    //[NSException raise:@"Not Implemented error" format:@"Must be overriden!"];
 }
 
 -(void)execute:(NSString *)command param:(NSArray *)params kwargs:(NSString *)args

@@ -42,6 +42,7 @@
 #define FILTER_REVERSED 8
 #define FILTER_COLOR 16
 
+
 + (Format *)sharedManager;
 
 + (NSString *)filter:(NSString *)text type:(NSInteger)type;

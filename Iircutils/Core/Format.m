@@ -7,6 +7,7 @@
 //
 
 #import "Format.h"
+#import "NSString+Utils.h"
 
 //CTCP related
 static NSArray * commands = nil;
@@ -28,27 +29,46 @@ static dispatch_once_t onceToken;
  
 + (NSString *)filter:(NSString *)text type:(NSInteger)type
 {
+    if(type == FILTER_BOLD)
+        return [text stringByReplacingOccurrencesOfString:T_BOLD withString:@""];
+    else if(type == FILTER_UNDERLINE)
+        return [text stringByReplacingOccurrencesOfString:T_UNDERLINE withString:@""];
+    else if(type == FILTER_REVERSED)
+        return [text stringByReplacingOccurrencesOfString:T_REVERSED withString:@""];
+    else if(type == FILTER_COLOR)
+        return nil;
+    else
+        return nil;
+    
     return nil;
 }
 
 + (NSString *)bold:(NSString *)text
 {
-    return nil;
+    return [NSString stringWithFormat:@"%@%@%@", T_BOLD, text, T_BOLD];
 }
 
 + (NSString *)underline:(NSString *)text
 {
-    return nil;
+    return [NSString stringWithFormat:@"%@%@%@", T_UNDERLINE, text, T_UNDERLINE];
 }
 
 + (NSString *)reversed:(NSString *)text
 {
-    return nil;
+    return [NSString stringWithFormat:@"%@%@%@", T_REVERSED, text, T_REVERSED];;
 }
 
 + (NSString *)color:(NSString *)text foreground:(NSString *)fm background:(NSString *)bm
 {
-    return nil;
+    NSMutableString * c = [[NSMutableString alloc] init];
+    [c appendFormat:@"%@%@", T_COLOR_TAG, fm];
+    
+    if (bm != nil)
+    {
+        [c appendFormat:@",%@", bm];
+    }
+    
+    return [NSString stringWithFormat:@"%@%@%@", c, text, [T_COLOR_TAG repeat:3]];
 }
 
 @end
